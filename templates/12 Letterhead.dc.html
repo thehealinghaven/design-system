@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;} body{margin:0;background:#3A352F;} a{color:#8C7344;text-decoration:none;} a:hover{color:#A53F3F;}
+  doc-page:not(:defined){visibility:hidden;}
+</style>
+</helmet>
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" margin="0.9in" hint-size="100%,100%">
+  <div style="--gold:#B89968;--gold-deep:#8C7344;--gold-light:#DDC9A3;--wood:#7A8B6F;--wood-deep:#4D5B45;--water:#7BA7A6;--earth:#C97B5C;--fire:#A53F3F;--cream:#F5EEE0;--cream-light:#FAF6EE;--cream-deep:#ECE2CE;--stone:#A89F92;--charcoal:#252220;--charcoal-soft:#3A352F;--handle:#7A756C;--near-black:#211F1C;--cream-social:#F9F5EC;--font-display:'Fraunces',Georgia,serif;--font-body:'Manrope',-apple-system,'Segoe UI',sans-serif; font-family:var(--font-body); min-height:100%; display:flex; flex-direction:column;">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding-bottom:28px; border-bottom:2px solid var(--cream-deep);">
+      <div style="display:flex; align-items:center; gap:20px;">
+        <div style="width:70px; height:70px;"><dc-import name="Mark" color="#B89968" hint-size="70px,70px" style="width:70px;height:70px;"></dc-import></div>
+        <div>
+          <div style="font-family:var(--font-display); font-size:36px; color:var(--near-black); font-variation-settings:'SOFT' 60; line-height:1;">{{ practice }}</div>
+          <div style="font-family:var(--font-body); font-size:14px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--gold-deep); margin-top:9px;">{{ clinician }}</div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:52px 0 30px; flex:1;">
+      <p style="margin:0 0 30px; font-family:var(--font-body); font-size:15px; color:var(--stone);">{{ dateLine }}</p>
+      <p style="margin:0 0 24px; font-family:var(--font-body); font-size:15px; line-height:1.75; color:var(--charcoal-soft);">{{ salutation }}</p>
+      <p style="margin:0 0 24px; font-family:var(--font-body); font-size:15px; line-height:1.85; color:var(--charcoal-soft);">{{ body }}</p>
+      <p style="margin:0; font-family:var(--font-display); font-style:italic; font-size:17px; line-height:1.6; color:var(--charcoal); font-variation-settings:'SOFT' 100;">{{ signoff }}<br>{{ signName }}</p>
+    </div>
+    <div style="padding-top:24px; border-top:2px solid var(--cream-deep); display:flex; justify-content:space-between; align-items:flex-end; gap:20px;">
+      <div style="font-family:var(--font-body); font-size:12px; line-height:1.6; color:var(--charcoal-soft);">{{ addr1 }}<br>{{ addr2 }}</div>
+      <div style="text-align:right; font-family:var(--font-body); font-size:12px; line-height:1.6; color:var(--charcoal-soft);">{{ email }}<br>{{ phoneWeb }}</div>
+    </div>
+    <div style="margin-top:14px; text-align:center; font-family:var(--font-body); font-size:10px; letter-spacing:1px; color:var(--stone);">{{ legalName }}</div>
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;practice&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;The Healing Haven&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;clinician&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Helen deLovely, LCSW&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;dateLine&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Date&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;salutation&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Dear \u2014&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;body&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Body copy sits in this generous cream field, set in Manrope at a relaxed line height. There's room to breathe \u2014 the header and footer hold the brand so the letter itself can stay plain and human.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;signoff&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;With care,&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;signName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Helen&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;addr1&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;250 E 200 S, Suite 1521&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;addr2&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Salt Lake City, UT 84111&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@helendelovely.com&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;phoneWeb&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;(385) 443-4045 \u00b7 helendelovely.com&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;legalName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Helen deLovely LCSW PLLC&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      practice: p.practice ?? 'The Healing Haven',
+      clinician: p.clinician ?? 'Helen deLovely, LCSW',
+      dateLine: p.dateLine ?? 'Date',
+      salutation: p.salutation ?? 'Dear \u2014',
+      body: p.body ?? "Body copy sits in this generous cream field, set in Manrope at a relaxed line height. There's room to breathe \u2014 the header and footer hold the brand so the letter itself can stay plain and human.",
+      signoff: p.signoff ?? 'With care,',
+      signName: p.signName ?? 'Helen',
+      addr1: p.addr1 ?? '250 E 200 S, Suite 1521',
+      addr2: p.addr2 ?? 'Salt Lake City, UT 84111',
+      email: p.email ?? 'hello@helendelovely.com',
+      phoneWeb: p.phoneWeb ?? '(385) 443-4045 \u00b7 helendelovely.com',
+      legalName: p.legalName ?? 'Helen deLovely LCSW PLLC',
+    };
+  }
+}
+</script>
+</body>
+</html>

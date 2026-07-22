@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  a { color: #8C7344; text-decoration: none; }
+  a:hover { color: #A53F3F; }
+  @keyframes hh-breathe {
+    0%, 100% { transform: scale(0.82); opacity: 0.16; }
+    50%      { transform: scale(1.08); opacity: 0.34; }
+  }
+  @keyframes hh-reel-mark {
+    0% { opacity: 0; transform: scale(0.62); }
+    22%, 82% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.06); }
+  }
+  @keyframes hh-reel-rise {
+    0% { opacity: 0; transform: translateY(22px); }
+    28%, 80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-12px); }
+  }
+  @keyframes hh-reel-rule {
+    0%, 24% { transform: scaleX(0); }
+    46%, 82% { transform: scaleX(1); }
+    100% { transform: scaleX(1); opacity: 0; }
+  }
+  @keyframes hh-breath-ring {
+    0%, 100% { transform: scale(0.5); }
+    25% { transform: scale(1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(0.5); }
+  }
+  @keyframes hh-ds-word {
+    0%, 10% { opacity: 0; transform: translateY(12px); filter: blur(5px); }
+    30%, 84% { opacity: 1; transform: translateY(0); filter: blur(0); }
+    100% { opacity: 0; transform: translateY(-8px); filter: blur(3px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hh-breathe, .hh-reel-mark, .hh-reel-rise, .hh-reel-rule, .hh-breath-ring, .hh-ds-word { animation: none !important; }
+    .hh-reel-mark, .hh-reel-rise, .hh-ds-word { opacity: 1 !important; transform: none !important; filter: none !important; }
+    .hh-reel-rule { transform: scaleX(1) !important; }
+    .hh-breath-ring { transform: scale(0.85) !important; }
+  }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#252220">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#252220"></rect>
+    <g transform="translate(600,400) scale(1.4)">
+      <circle cx="0" cy="0" r="85" fill="none" stroke="#DDC9A3" stroke-width="5.7"></circle>
+      <path d="M -34 48.2 C -42.5 14.2, -21.3 -19.8, 11.3 -25.5 C 43.9 -31.2, 63.8 -4.3, 56.7 25.5 C 51 48.2, 28.3 58.1, 8.5 46.8 C -9.9 36.8, -5.7 12.8, 12.8 9.9 C 26.9 8.5, 34 19.8, 28.3 32.6" fill="none" stroke="#DDC9A3" stroke-width="9.9" stroke-linecap="round" stroke-linejoin="round"></path>
+      <circle cx="0" cy="-65.2" r="5.4" fill="#DDC9A3"></circle>
+      <circle cx="63.8" cy="-19.8" r="5.4" fill="#DDC9A3"></circle>
+      <circle cx="39.7" cy="55.3" r="5.4" fill="#DDC9A3"></circle>
+      <circle cx="-39.7" cy="55.3" r="5.4" fill="#DDC9A3"></circle>
+      <circle cx="-63.8" cy="-19.8" r="5.4" fill="#DDC9A3"></circle>
+    </g>
+  </svg>
+</template>
+
+<div style="--gold:#B89968;--gold-deep:#8C7344;--gold-light:#DDC9A3;--wood:#7A8B6F;--wood-deep:#4D5B45;--water:#7BA7A6;--earth:#C97B5C;--fire:#A53F3F;--fire-soft:#C26565;--cream:#F5EEE0;--cream-light:#FAF6EE;--cream-deep:#ECE2CE;--stone:#A89F92;--charcoal:#252220;--charcoal-soft:#3A352F;--font-display:'Fraunces',Georgia,'Times New Roman',serif;--font-body:'Manrope',-apple-system,'Segoe UI',sans-serif; font-family: var(--font-body); background: var(--cream); color: var(--charcoal-soft); -webkit-font-smoothing: antialiased; overflow-x: hidden;">
+
+  <!-- ============ COVER ============ -->
+  <header style="position: relative; overflow: hidden; background: var(--charcoal); background-image: radial-gradient(circle at 18% 20%, rgba(184,153,104,0.10) 0%, transparent 55%), radial-gradient(circle at 84% 82%, rgba(122,139,111,0.08) 0%, transparent 55%); padding: 96px 40px 88px;">
+    <div class="hh-breathe" aria-hidden="true" style="position: absolute; top: 50%; right: -140px; width: 520px; height: 520px; margin-top: -260px; border: 1px solid rgba(221,201,163,0.5); border-radius: 50%; animation: hh-breathe 18s ease-in-out infinite;"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto;">
+      <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 56px;">
+        <svg viewBox="0 0 200 200" width="52" height="52" role="img" aria-label="The Healing Haven mark" style="display:block; flex-shrink:0;">
+          <g transform="translate(100,100)">
+            <circle cx="0" cy="0" r="85" fill="none" stroke="var(--gold-light)" stroke-width="5.7"></circle>
+            <path d="M -34 48.2 C -42.5 14.2, -21.3 -19.8, 11.3 -25.5 C 43.9 -31.2, 63.8 -4.3, 56.7 25.5 C 51 48.2, 28.3 58.1, 8.5 46.8 C -9.9 36.8, -5.7 12.8, 12.8 9.9 C 26.9 8.5, 34 19.8, 28.3 32.6" fill="none" stroke="var(--gold-light)" stroke-width="9.9" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="0" cy="-65.2" r="5.4" fill="var(--gold-light)"></circle>
+            <circle cx="63.8" cy="-19.8" r="5.4" fill="var(--gold-light)"></circle>
+            <circle cx="39.7" cy="55.3" r="5.4" fill="var(--gold-light)"></circle>
+            <circle cx="-39.7" cy="55.3" r="5.4" fill="var(--gold-light)"></circle>
+            <circle cx="-63.8" cy="-19.8" r="5.4" fill="var(--gold-light)"></circle>
+          </g>
+        </svg>
+        <span style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-light);">The Healing Haven SLC</span>
+      </div>
+
+      <div style="display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 28px;">
+        <span style="width: 32px; height: 1px; background: currentColor; opacity: 0.9;"></span>
+        <span>Salt Lake City · In-person &amp; Online</span>
+      </div>
+
+      <h1 style="margin: 0; max-width: 15ch; font-family: var(--font-display); font-size: clamp(48px, 7vw, 96px); font-weight: 350; line-height: 0.98; letter-spacing: -0.018em; color: var(--cream); font-variation-settings: 'SOFT' 100;">
+        The <em style="font-style: italic; font-weight: 400; color: var(--gold-light);">Healing Haven</em> design system
+      </h1>
+
+      <p style="margin: 34px 0 0; max-width: 60ch; font-family: var(--font-display); font-style: italic; font-weight: 350; font-size: clamp(18px, 2vw, 22px); line-height: 1.5; color: rgba(245,238,224,0.82); font-variation-settings: 'SOFT' 100;">
+        A somatic, holistic therapy practice for the slow, honest work of taking the mask off — and feeling safe inside your own life again.
+      </p>
+
+      <div style="margin-top: 44px; display: flex; flex-wrap: wrap; gap: 24px 40px; font-family: var(--font-body); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(221,201,163,0.7);">
+        <span>Helen DeLovely, LCSW</span>
+        <span style="color: rgba(245,238,224,0.35);">·</span>
+        <span>Brand &amp; product system</span>
+        <span style="color: rgba(245,238,224,0.35);">·</span>
+        <span>v1 · 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FOUNDATION: LOGO ============ -->
+  <section data-screen-label="Logo" style="max-width: 1180px; margin: 0 auto; padding: 110px 40px 0;">
+    <div style="display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 22px;">
+      <span style="width: 32px; height: 1px; background: currentColor; opacity: 0.9;"></span><span>01 · The mark</span>
+    </div>
+    <h2 style="margin: 0 0 16px; max-width: 20ch; font-family: var(--font-display); font-size: clamp(34px, 4vw, 52px); font-weight: 350; line-height: 1.05; letter-spacing: -0.01em; color: var(--charcoal); font-variation-settings: 'SOFT' 50;">
+      A haven holding a <em style="font-style: italic; font-weight: 400; color: var(--gold-deep); font-variation-settings: 'SOFT' 100;">fiddlehead</em> mid-unfurl
+    </h2>
+    <p style="margin: 0 0 48px; max-width: 66ch; font-size: 17px; line-height: 1.65; color: var(--charcoal-soft);">
+      The circle is the haven. The fern frond is the metaphor for therapy — slow, asymmetric, alive. Five small points hold the five elements of feng shui. Gold on cream, or gold-light on charcoal for the signature dark application.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <div style="display: flex; align-items: center; justify-content: center; padding: 56px 32px; background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px;">
+        <img src="assets/logos/spark-series-logo-v3-horizontal-dark.svg" alt="The Spark Series horizontal logo" style="width: 100%; max-width: 380px; height: auto;">
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; padding: 40px 32px; background: var(--charcoal); border-radius: 4px;">
+        <svg viewBox="0 0 200 200" width="120" height="120" role="img" aria-label="mark on charcoal" style="display:block;">
+          <g transform="translate(100,100)">
+            <circle cx="0" cy="0" r="85" fill="none" stroke="var(--gold-light)" stroke-width="5.7"></circle>
+            <path d="M -34 48.2 C -42.5 14.2, -21.3 -19.8, 11.3 -25.5 C 43.9 -31.2, 63.8 -4.3, 56.7 25.5 C 51 48.2, 28.3 58.1, 8.5 46.8 C -9.9 36.8, -5.7 12.8, 12.8 9.9 C 26.9 8.5, 34 19.8, 28.3 32.6" fill="none" stroke="var(--gold-light)" stroke-width="9.9" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="0" cy="-65.2" r="5.4" fill="var(--gold-light)"></circle><circle cx="63.8" cy="-19.8" r="5.4" fill="var(--gold-light)"></circle><circle cx="39.7" cy="55.3" r="5.4" fill="var(--gold-light)"></circle><circle cx="-39.7" cy="55.3" r="5.4" fill="var(--gold-light)"></circle><circle cx="-63.8" cy="-19.8" r="5.4" fill="var(--gold-light)"></circle>
+          </g>
+        </svg>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; padding: 40px 32px; background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px;">
+        <img src="assets/logos/spark-series-logo-v3-corner-badge.svg" alt="The Spark Series corner badge" style="width: 100%; max-width: 440px; height: auto;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COLOR ============ -->
+  <section data-screen-label="Color" style="max-width: 1180px; margin: 0 auto; padding: 110px 40px 0;">
+    <div style="display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 22px;">
+      <span style="width: 32px; height: 1px; background: currentColor; opacity: 0.9;"></span><span>02 · Color</span>
+    </div>
+    <h2 style="margin: 0 0 16px; max-width: 22ch; font-family: var(--font-display); font-size: clamp(34px, 4vw, 52px); font-weight: 350; line-height: 1.05; letter-spacing: -0.01em; color: var(--charcoal); font-variation-settings: 'SOFT' 50;">
+      Organized by the <em style="font-style: italic; font-weight: 400; color: var(--gold-deep); font-variation-settings: 'SOFT' 100;">five elements</em>
+    </h2>
+    <p style="margin: 0 0 48px; max-width: 66ch; font-size: 17px; line-height: 1.65; color: var(--charcoal-soft);">
+      Metal (gold) leads. Wood, water, and earth hold quiet positions around it. Fire — Helen's deep red — runs through everything as a signature, used at the 1–2% level, like a wax seal on a letter.
+    </p>
+
+    <!-- Elements ramp -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-bottom: 48px;">
+      <div style="border-radius: 4px; overflow: hidden; border: 1px solid var(--cream-deep);">
+        <div style="height: 128px; background: var(--gold);"></div>
+        <div style="padding: 14px 16px; background: var(--cream-light);">
+          <div style="font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--charcoal);">Metal · Gold</div>
+          <div style="font-family: var(--font-body); font-size: 12px; color: var(--stone); margin-top: 3px;">#B89968 · primary</div>
+        </div>
+      </div>
+      <div style="border-radius: 4px; overflow: hidden; border: 1px solid var(--cream-deep);">
+        <div style="height: 128px; background: var(--wood);"></div>
+        <div style="padding: 14px 16px; background: var(--cream-light);">
+          <div style="font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--charcoal);">Wood · Sage</div>
+          <div style="font-family: var(--font-body); font-size: 12px; color: var(--stone); margin-top: 3px;">#7A8B6F</div>
+        </div>
+      </div>
+      <div style="border-radius: 4px; overflow: hidden; border: 1px solid var(--cream-deep);">
+        <div style="height: 128px; background: var(--water);"></div>
+        <div style="padding: 14px 16px; background: var(--cream-light);">
+          <div style="font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--charcoal);">Water · Teal</div>
+          <div style="font-family: var(--font-body); font-size: 12px; color: var(--stone); margin-top: 3px;">#7BA7A6</div>
+        </div>
+      </div>
+      <div style="border-radius: 4px; overflow: hidden; border: 1px solid var(--cream-deep);">
+        <div style="height: 128px; background: var(--earth);"></div>
+        <div style="padding: 14px 16px; background: var(--cream-light);">
+          <div style="font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--charcoal);">Earth · Terracotta</div>
+          <div style="font-family: var(--font-body); font-size: 12px; color: var(--stone); margin-top: 3px;">#C97B5C</div>
+        </div>
+      </div>
+      <div style="border-radius: 4px; overflow: hidden; border: 1px solid var(--cream-deep);">
+        <div style="height: 128px; background: var(--fire); position: relative;">
+          <span style="position: absolute; top: 10px; right: 10px; font-family: var(--font-body); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245,238,224,0.85); background: rgba(37,34,32,0.4); padding: 3px 8px; border-radius: 100px;">1–2% only</span>
+        </div>
+        <div style="padding: 14px 16px; background: var(--cream-light);">
+          <div style="font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--charcoal);">Fire · Deep red</div>
+          <div style="font-family: var(--font-body); font-size: 12px; color: var(--stone); margin-top: 3px;">#A53F3F · signature</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gold ramp + neutrals -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px 48px; margin-bottom: 48px;">
+      <div>
+        <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 16px;">Gold ramp</div>
+        <div style="display: flex; border-radius: 4px; overflow: hidden; border: 1px solid var(--cream-deep);">
+          <div style="flex: 1; height: 76px; background: var(--gold-light);"></div>
+          <div style="flex: 1; height: 76px; background: var(--gold);"></div>
+          <div style="flex: 1; height: 76px; background: var(--gold-deep);"></div>
+        </div>
+        <div style="display: flex; margin-top: 8px; font-family: var(--font-body); font-size: 11px; color: var(--stone);">
+          <span style="flex:1;">#DDC9A3</span><span style="flex:1;">#B89968</span><span style="flex:1;">#8C7344</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 16px;">Warm neutrals</div>
+        <div style="display: flex; border-radius: 4px; overflow: hidden; border: 1px solid var(--cream-deep);">
+          <div style="flex: 1; height: 76px; background: var(--cream-light);"></div>
+          <div style="flex: 1; height: 76px; background: var(--cream);"></div>
+          <div style="flex: 1; height: 76px; background: var(--cream-deep);"></div>
+          <div style="flex: 1; height: 76px; background: var(--stone);"></div>
+          <div style="flex: 1; height: 76px; background: var(--charcoal-soft);"></div>
+          <div style="flex: 1; height: 76px; background: var(--charcoal);"></div>
+        </div>
+        <div style="display: flex; margin-top: 8px; font-family: var(--font-body); font-size: 10px; color: var(--stone);">
+          <span style="flex:1;">Light</span><span style="flex:1;">Cream</span><span style="flex:1;">Deep</span><span style="flex:1;">Stone</span><span style="flex:1;">Soft</span><span style="flex:1;">Charcoal</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 60/30/10 usage -->
+    <div style="background: var(--cream); border: 1px solid var(--cream-deep); border-left: 3px solid var(--gold); border-radius: 4px; padding: 30px;">
+      <div style="font-family: var(--font-body); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 10px;">The 60 · 30 · 10 rule</div>
+      <div style="display: flex; height: 44px; border-radius: 4px; overflow: hidden; margin-bottom: 14px;">
+        <div style="width: 60%; background: var(--cream-deep); display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-size: 12px; color: var(--charcoal-soft);">60% cream foundation</div>
+        <div style="width: 30%; background: var(--wood-deep); display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-size: 12px; color: var(--cream);">30% deep neutrals</div>
+        <div style="width: 8%; background: var(--gold);"></div>
+        <div style="width: 2%; background: var(--fire);"></div>
+      </div>
+      <p style="margin: 0; font-family: var(--font-body); font-size: 14px; line-height: 1.65; color: var(--charcoal-soft);">
+        Gold never sits on pure white — it loses its warmth. Cream, never white, is the hero surface; pure white is reserved for in-product cards and forms so they read as functional. Pull no more than two element colors into one layout.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ TYPOGRAPHY ============ -->
+  <section data-screen-label="Type" style="max-width: 1180px; margin: 0 auto; padding: 110px 40px 0;">
+    <div style="display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 22px;">
+      <span style="width: 32px; height: 1px; background: currentColor; opacity: 0.9;"></span><span>03 · Type</span>
+    </div>
+    <h2 style="margin: 0 0 48px; max-width: 24ch; font-family: var(--font-display); font-size: clamp(34px, 4vw, 52px); font-weight: 350; line-height: 1.05; letter-spacing: -0.01em; color: var(--charcoal); font-variation-settings: 'SOFT' 50;">
+      Fraunces does the <em style="font-style: italic; font-weight: 400; color: var(--gold-deep); font-variation-settings: 'SOFT' 100;">feeling</em>. Manrope does the work.
+    </h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 48px;">
+      <!-- Fraunces -->
+      <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 40px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
+          <span style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep);">Fraunces</span>
+          <span style="font-family: var(--font-body); font-size: 11px; color: var(--stone);">Display serif · variable</span>
+        </div>
+        <div style="font-family: var(--font-display); font-size: 84px; line-height: 1; color: var(--charcoal); font-variation-settings: 'SOFT' 100; margin-bottom: 8px;">Aa</div>
+        <div style="font-family: var(--font-display); font-style: italic; font-size: 30px; line-height: 1.3; color: var(--gold-deep); font-variation-settings: 'SOFT' 100; margin-bottom: 20px;">You don't have to be anyone but yourself here.</div>
+        <p style="margin: 0; font-family: var(--font-body); font-size: 13px; line-height: 1.7; color: var(--charcoal-soft);">Soft ball terminals. We run <strong style="font-weight:600;">SOFT 100</strong> for warm headlines, <strong style="font-weight:600;">SOFT 50</strong> for restrained titles, weight ~350. Italic used heavily — a key phrase set in gold.</p>
+      </div>
+      <!-- Manrope -->
+      <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 40px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
+          <span style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep);">Manrope</span>
+          <span style="font-family: var(--font-body); font-size: 11px; color: var(--stone);">Humanist sans · 300–700</span>
+        </div>
+        <div style="font-family: var(--font-body); font-weight: 600; font-size: 84px; line-height: 1; color: var(--charcoal); margin-bottom: 20px;">Aa</div>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+          <span style="font-family: var(--font-body); font-weight: 300; font-size: 22px; color: var(--charcoal);">Light</span>
+          <span style="font-family: var(--font-body); font-weight: 400; font-size: 22px; color: var(--charcoal);">Regular</span>
+          <span style="font-family: var(--font-body); font-weight: 500; font-size: 22px; color: var(--charcoal);">Medium</span>
+          <span style="font-family: var(--font-body); font-weight: 600; font-size: 22px; color: var(--charcoal);">Semibold</span>
+          <span style="font-family: var(--font-body); font-weight: 700; font-size: 22px; color: var(--charcoal);">Bold</span>
+        </div>
+        <p style="margin: 0; font-family: var(--font-body); font-size: 13px; line-height: 1.7; color: var(--charcoal-soft);">Body copy, UI, nav, forms, captions. Readable at 14px. Never competes with Fraunces — it carries the practical, functional voice.</p>
+      </div>
+    </div>
+
+    <!-- Type scale -->
+    <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 40px 40px 24px;">
+      <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 24px;">Type scale</div>
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-top: 1px solid var(--cream-deep);">
+        <span style="width: 92px; flex-shrink: 0; font-family: var(--font-body); font-size: 11px; color: var(--stone);">Display · 72</span>
+        <span style="font-family: var(--font-display); font-size: 56px; line-height: 1; color: var(--charcoal); font-variation-settings: 'SOFT' 100;">We move at the speed of safety</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-top: 1px solid var(--cream-deep);">
+        <span style="width: 92px; flex-shrink: 0; font-family: var(--font-body); font-size: 11px; color: var(--stone);">Title · 32</span>
+        <span style="font-family: var(--font-display); font-style: italic; font-size: 32px; line-height: 1.1; color: var(--charcoal); font-variation-settings: 'SOFT' 100;">Therapy here is slow. That's the point.</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-top: 1px solid var(--cream-deep);">
+        <span style="width: 92px; flex-shrink: 0; font-family: var(--font-body); font-size: 11px; color: var(--stone);">Heading · 24</span>
+        <span style="font-family: var(--font-display); font-size: 24px; line-height: 1.2; color: var(--charcoal);">For every body. Every identity. Every story.</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-top: 1px solid var(--cream-deep);">
+        <span style="width: 92px; flex-shrink: 0; font-family: var(--font-body); font-size: 11px; color: var(--stone);">Body · 17</span>
+        <span style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; color: var(--charcoal-soft);">We work with breath, sound bowls, and the body's own knowing.</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-top: 1px solid var(--cream-deep);">
+        <span style="width: 92px; flex-shrink: 0; font-family: var(--font-body); font-size: 11px; color: var(--stone);">Eyebrow · 11</span>
+        <span style="font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-deep);">Salt Lake City · In-person &amp; Online</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENTS ============ -->
+  <section data-screen-label="Components" style="max-width: 1180px; margin: 0 auto; padding: 110px 40px 0;">
+    <div style="display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 22px;">
+      <span style="width: 32px; height: 1px; background: currentColor; opacity: 0.9;"></span><span>04 · Components</span>
+    </div>
+    <h2 style="margin: 0 0 48px; max-width: 22ch; font-family: var(--font-display); font-size: clamp(34px, 4vw, 52px); font-weight: 350; line-height: 1.05; letter-spacing: -0.01em; color: var(--charcoal); font-variation-settings: 'SOFT' 50;">
+      Quiet, warm <em style="font-style: italic; font-weight: 400; color: var(--gold-deep); font-variation-settings: 'SOFT' 100;">primitives</em>
+    </h2>
+
+    <!-- Buttons -->
+    <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 40px; margin-bottom: 24px;">
+      <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 24px;">Buttons — pill, tracked all-caps</div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px 24px;">
+        <button style="padding: 13px 28px; border: none; cursor: pointer; border-radius: 100px; background: var(--gold); color: var(--cream-light); font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; box-shadow: 0 4px 14px rgba(184,153,104,0.25); transition: all 0.25s cubic-bezier(0.25,0.1,0.25,1);" style-hover="background: var(--gold-deep); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(140,115,68,0.32);">Begin a Consult →</button>
+        <button style="padding: 13px 28px; border: none; cursor: pointer; border-radius: 100px; background: var(--charcoal); color: var(--cream-light); font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; transition: all 0.25s cubic-bezier(0.25,0.1,0.25,1);" style-hover="background: var(--gold-deep); transform: translateY(-1px);">Member Login</button>
+        <button style="padding: 6px 0; border: none; cursor: pointer; background: transparent; color: var(--charcoal); border-bottom: 1px solid var(--gold); font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; transition: all 0.2s cubic-bezier(0.25,0.1,0.25,1);" style-hover="color: var(--gold-deep); border-color: var(--gold-deep);">Learn how I work</button>
+        <button style="padding: 6px 0; border: none; cursor: pointer; background: transparent; color: var(--gold-deep); font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; transition: color 0.2s cubic-bezier(0.25,0.1,0.25,1);" style-hover="color: var(--fire);">Ghost →</button>
+      </div>
+    </div>
+
+    <!-- Eyebrow / heading / quote row -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 24px;">
+      <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 34px 30px;">
+        <div style="font-family: var(--font-display); font-style: italic; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 14px;">No. 01</div>
+        <h3 style="margin: 0 0 10px; font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--charcoal);">Card — warm surface</h3>
+        <p style="margin: 0; font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: var(--charcoal-soft);">A hairline border and a gentle 2px hover lift. The house radius is small — 4px. Cards warm to gold-light on hover.</p>
+      </div>
+      <aside style="background: var(--cream); border: 1px solid var(--cream-deep); border-left: 3px solid var(--fire); border-radius: 4px; padding: 30px;">
+        <div style="font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--fire); margin-bottom: 8px;">Reassurance</div>
+        <h4 style="margin: 0 0 12px; font-family: var(--font-display); font-style: italic; font-size: 24px; font-weight: 400; color: var(--charcoal);">The hardest step</h4>
+        <p style="margin: 0; font-family: var(--font-body); font-size: 14px; line-height: 1.65; color: var(--charcoal-soft);">Reaching out is the hardest step. There's no obligation after it. — the aside card, with its gold, fire, or wood left-accent rule.</p>
+      </aside>
+      <div style="background: var(--charcoal); border-radius: 4px; padding: 40px 34px; display: flex; flex-direction: column; justify-content: center;">
+        <blockquote style="margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 350; font-size: 28px; line-height: 1.15; color: var(--cream); font-variation-settings: 'SOFT' 100;">We move at the <em style="font-style: normal; color: var(--fire-soft);">speed of safety</em>.</blockquote>
+        <figcaption style="margin-top: 18px; font-family: var(--font-body); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: var(--gold-light);">Quote pull · fire accent</figcaption>
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 40px; margin-bottom: 24px;">
+      <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 24px;">Tags — tinted by element</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+        <span style="display: inline-flex; align-items: center; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; padding: 6px 13px; border-radius: 100px; background: rgba(184,153,104,0.14); color: var(--gold-deep);">Somatic work</span>
+        <span style="display: inline-flex; align-items: center; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; padding: 6px 13px; border-radius: 100px; background: rgba(122,139,111,0.16); color: var(--wood-deep);">Trauma-focused</span>
+        <span style="display: inline-flex; align-items: center; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; padding: 6px 13px; border-radius: 100px; background: rgba(123,167,166,0.16); color: #3E6E6D;">Reiki &amp; sound</span>
+        <span style="display: inline-flex; align-items: center; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; padding: 6px 13px; border-radius: 100px; background: rgba(201,123,92,0.16); color: #9E4F32;">Executive function</span>
+        <span style="display: inline-flex; align-items: center; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; padding: 6px 13px; border-radius: 100px; background: rgba(165,63,63,0.12); color: var(--fire);">LGBTQ+ affirming</span>
+        <span style="display: inline-flex; align-items: center; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; padding: 6px 13px; border-radius: 100px; background: var(--charcoal); color: var(--cream-light);">Free 15-min consult</span>
+      </div>
+    </div>
+
+    <!-- Photo frame -->
+    <div style="display: grid; grid-template-columns: minmax(0, 420px) 1fr; gap: 48px; align-items: center;">
+      <figure style="margin: 0; position: relative; overflow: hidden; border-radius: 34px 34px 6px 34px; border: 1px solid rgba(184,153,104,0.28); background: var(--cream-deep); box-shadow: 0 24px 60px rgba(37,34,32,0.14);">
+        <span aria-hidden="true" style="position: absolute; inset: 18px; border: 1px solid rgba(245,238,224,0.42); border-radius: 22px 22px 2px 22px; z-index: 1; pointer-events: none;"></span>
+        <img src="assets/imagery/helen-laptop.jpg" alt="Helen DeLovely" style="display: block; width: 100%; height: 460px; object-fit: cover; object-position: center;">
+        <figcaption style="position: absolute; left: 22px; right: 22px; bottom: 22px; z-index: 2; background: rgba(37,34,32,0.70); color: var(--cream-light); padding: 12px 14px; border: 1px solid rgba(221,201,163,0.28); font-family: var(--font-body); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 600;">Helen DeLovely, LCSW · Salt Lake City</figcaption>
+      </figure>
+      <div>
+        <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 16px;">Photo frame — the petal</div>
+        <p style="margin: 0 0 16px; font-family: var(--font-body); font-size: 17px; line-height: 1.65; color: var(--charcoal-soft);">The signature flourish: an organic <strong style="font-weight:600;">34px 34px 6px 34px</strong> corner radius, a warm gold hairline, an inset inner keyline, and a tracked caption chip over a soft charcoal wash.</p>
+        <p style="margin: 0; font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: var(--stone);">Imagery is warm and lived-in — never clinical white walls, never generic wellness stock. Garden greenery, real spaces, a subtle dark overlay so type can sit on top.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VOICE ============ -->
+  <section data-screen-label="Voice" style="background: var(--wood-deep); margin-top: 110px; padding: 96px 40px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 22px;">
+        <span style="width: 32px; height: 1px; background: currentColor; opacity: 0.9;"></span><span>05 · Voice</span>
+      </div>
+      <h2 style="margin: 0 0 56px; max-width: 24ch; font-family: var(--font-display); font-size: clamp(34px, 4vw, 52px); font-weight: 350; line-height: 1.05; letter-spacing: -0.01em; color: var(--cream); font-variation-settings: 'SOFT' 50;">
+        Warm, grounded, plain-spoken — with room for <em style="font-style: italic; font-weight: 400; color: var(--gold-light); font-variation-settings: 'SOFT' 100;">poetry</em> where it earns its keep.
+      </h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+        <div style="background: rgba(245,238,224,0.06); border: 1px solid rgba(245,238,224,0.12); border-radius: 4px; padding: 30px;">
+          <div style="font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--gold-light); margin-bottom: 14px;">Warm, not saccharine</div>
+          <p style="margin: 0; font-family: var(--font-display); font-style: italic; font-size: 19px; line-height: 1.4; color: var(--cream); font-variation-settings: 'SOFT' 100;">"Therapy here is slow. That's the point."</p>
+        </div>
+        <div style="background: rgba(245,238,224,0.06); border: 1px solid rgba(245,238,224,0.12); border-radius: 4px; padding: 30px;">
+          <div style="font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--gold-light); margin-bottom: 14px;">Inclusive by default</div>
+          <p style="margin: 0; font-family: var(--font-display); font-style: italic; font-size: 19px; line-height: 1.4; color: var(--cream); font-variation-settings: 'SOFT' 100;">"For every body. Every identity. Every story."</p>
+        </div>
+        <div style="background: rgba(245,238,224,0.06); border: 1px solid rgba(245,238,224,0.12); border-radius: 4px; padding: 30px;">
+          <div style="font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--gold-light); margin-bottom: 14px;">Grounded, not floaty</div>
+          <p style="margin: 0; font-family: var(--font-display); font-style: italic; font-size: 19px; line-height: 1.4; color: var(--cream); font-variation-settings: 'SOFT' 100;">"We work with breath, sound bowls, and the body's own knowing."</p>
+        </div>
+        <div style="background: rgba(245,238,224,0.06); border: 1px solid rgba(245,238,224,0.12); border-radius: 4px; padding: 30px;">
+          <div style="font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--gold-light); margin-bottom: 14px;">Mask off</div>
+          <p style="margin: 0; font-family: var(--font-display); font-style: italic; font-size: 19px; line-height: 1.4; color: var(--cream); font-variation-settings: 'SOFT' 100;">"You don't have to be anyone but yourself here."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EFFECTS ============ -->
+  <section data-screen-label="Effects" style="max-width: 1180px; margin: 0 auto; padding: 110px 40px 0;">
+    <div style="display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 22px;">
+      <span style="width: 32px; height: 1px; background: currentColor; opacity: 0.9;"></span><span>06 · Radius, shadow &amp; motion</span>
+    </div>
+    <h2 style="margin: 0 0 48px; max-width: 22ch; font-family: var(--font-display); font-size: clamp(34px, 4vw, 52px); font-weight: 350; line-height: 1.05; letter-spacing: -0.01em; color: var(--charcoal); font-variation-settings: 'SOFT' 50;">
+      Small radii. <em style="font-style: italic; font-weight: 400; color: var(--gold-deep); font-variation-settings: 'SOFT' 100;">Warm</em> shadows. Slow motion.
+    </h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
+      <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 32px;">
+        <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 20px;">Radius</div>
+        <div style="display: flex; gap: 12px; align-items: flex-end; margin-bottom: 8px;">
+          <div style="width: 44px; height: 44px; background: var(--cream-deep); border: 1px solid var(--gold); border-radius: 2px;"></div>
+          <div style="width: 44px; height: 44px; background: var(--cream-deep); border: 1px solid var(--gold); border-radius: 4px;"></div>
+          <div style="width: 44px; height: 44px; background: var(--cream-deep); border: 1px solid var(--gold); border-radius: 16px;"></div>
+          <div style="width: 44px; height: 44px; background: var(--cream-deep); border: 1px solid var(--gold); border-radius: 34px 34px 6px 34px;"></div>
+        </div>
+        <p style="margin: 0; font-family: var(--font-body); font-size: 12px; color: var(--stone);">2 · 4 (house) · 16 · petal · plus 100px pills</p>
+      </div>
+      <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 32px;">
+        <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 20px;">Shadow</div>
+        <div style="display: flex; gap: 18px; align-items: center; margin-bottom: 14px;">
+          <div style="width: 56px; height: 56px; background: var(--cream); border-radius: 4px; box-shadow: 0 8px 22px rgba(184,153,104,0.10);"></div>
+          <div style="width: 56px; height: 56px; background: var(--cream); border-radius: 4px; box-shadow: 0 24px 60px rgba(37,34,32,0.14);"></div>
+        </div>
+        <p style="margin: 0; font-family: var(--font-body); font-size: 12px; color: var(--stone);">Warm gold-tinted lifts; a deep charcoal drop on framed photos. Never neutral grey.</p>
+      </div>
+      <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 32px;">
+        <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 20px;">Signature gradient</div>
+        <div style="height: 72px; border-radius: 4px; background: linear-gradient(160deg, #252220 0%, #3A352F 52%, #8C7344 100%); margin-bottom: 14px;"></div>
+        <p style="margin: 0; font-family: var(--font-body); font-size: 12px; color: var(--stone);">Charcoal → gold diagonal, on the portal membership card.</p>
+      </div>
+      <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 32px;">
+        <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 20px;">Motion</div>
+        <p style="margin: 0 0 8px; font-family: var(--font-display); font-style: italic; font-size: 20px; color: var(--charcoal); font-variation-settings: 'SOFT' 100;">Slow &amp; gentle.</p>
+        <p style="margin: 0; font-family: var(--font-body); font-size: 12px; line-height: 1.6; color: var(--stone);">cubic-bezier(0.25, 0.1, 0.25, 1) over 0.2–0.4s. Fades and 1–2px lifts, never bounce. Respects reduced-motion.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MOTION ============ -->
+  <section data-screen-label="Motion" style="max-width: 1180px; margin: 0 auto; padding: 110px 40px 0;">
+    <div style="display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 22px;">
+      <span style="width: 32px; height: 1px; background: currentColor; opacity: 0.9;"></span><span>07 · Motion</span>
+    </div>
+    <h2 style="margin: 0 0 16px; max-width: 22ch; font-family: var(--font-display); font-size: clamp(34px, 4vw, 52px); font-weight: 350; line-height: 1.05; letter-spacing: -0.01em; color: var(--charcoal); font-variation-settings: 'SOFT' 50;">
+      Everything moves like an <em style="font-style: italic; font-weight: 400; color: var(--gold-deep); font-variation-settings: 'SOFT' 100;">exhale</em>
+    </h2>
+    <p style="margin: 0 0 48px; max-width: 66ch; font-size: 17px; line-height: 1.65; color: var(--charcoal-soft);">
+      One principle governs all of it: slow, eased, and settled — never snappy, never bouncing. Motion arrives, holds long enough to be read, and leaves gently. It runs at two tempos, and every pattern below resolves to a clean, readable still for anyone who opts out of motion.
+    </p>
+
+    <!-- Two tempos -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 56px;">
+      <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 34px;">
+        <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 14px;">Tempo A · Interface</div>
+        <p style="margin: 0 0 18px; font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--charcoal); font-variation-settings: 'SOFT' 100;">0.2 – 0.4s</p>
+        <p style="margin: 0 0 16px; font-family: var(--font-body); font-size: 14px; line-height: 1.65; color: var(--charcoal-soft);">Hovers, focus, card lifts, menu reveals. Fades and 1–2px lifts, never bounce.</p>
+        <div style="font-family: var(--font-body); font-size: 12px; color: var(--stone); background: var(--cream); border: 1px solid var(--cream-deep); border-radius: 3px; padding: 10px 12px;">cubic-bezier(0.25, 0.1, 0.25, 1)</div>
+      </div>
+      <div style="background: var(--charcoal); border-radius: 4px; padding: 34px;">
+        <div style="font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 14px;">Tempo B · Brand &amp; video</div>
+        <p style="margin: 0 0 18px; font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--cream); font-variation-settings: 'SOFT' 100;">2 – 4s reveals</p>
+        <p style="margin: 0 0 16px; font-family: var(--font-body); font-size: 14px; line-height: 1.65; color: rgba(245,238,224,0.78);">Reels, Stories, the logo sting. Elements settle in, hold, then ease away. Long holds are the whole point.</p>
+        <div style="font-family: var(--font-body); font-size: 12px; color: rgba(245,238,224,0.6); background: rgba(245,238,224,0.06); border: 1px solid rgba(245,238,224,0.12); border-radius: 3px; padding: 10px 12px;">cubic-bezier(0.4, 0, 0.2, 1)</div>
+      </div>
+    </div>
+
+    <!-- Named patterns -->
+    <div style="font-family: var(--font-body); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 20px;">The named patterns · live</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px;">
+
+      <!-- Mark settle -->
+      <div style="background: var(--charcoal); border-radius: 4px; padding: 28px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div style="height: 96px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+          <div class="hh-reel-mark" style="width: 72px; height: 72px; animation: hh-reel-mark 5s cubic-bezier(0.4,0,0.2,1) infinite;"><dc-import name="Mark" color="#DDC9A3" hint-size="72px,72px" style="width:72px;height:72px;"></dc-import></div>
+        </div>
+        <div style="font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--cream); margin-bottom: 4px;">Mark settle</div>
+        <div style="font-family: var(--font-body); font-size: 12px; line-height: 1.5; color: rgba(245,238,224,0.6);">Scales up from 62%, holds, drifts out. Opens every Reel.</div>
+      </div>
+
+      <!-- Rise & fade -->
+      <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 28px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div style="height: 96px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; overflow: hidden;">
+          <div class="hh-reel-rise" style="font-family: var(--font-display); font-style: italic; font-size: 34px; color: var(--charcoal); font-variation-settings: 'SOFT' 80; animation: hh-reel-rise 5s cubic-bezier(0.4,0,0.2,1) infinite;">be here</div>
+        </div>
+        <div style="font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--charcoal); margin-bottom: 4px;">Rise &amp; fade</div>
+        <div style="font-family: var(--font-body); font-size: 12px; line-height: 1.5; color: var(--stone);">Text lifts 22px into place. Stagger delays for sequence.</div>
+      </div>
+
+      <!-- Rule draw -->
+      <div style="background: var(--cream-light); border: 1px solid var(--cream-deep); border-radius: 4px; padding: 28px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div style="height: 96px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; width: 100%;">
+          <div class="hh-reel-rule" style="width: 100px; height: 5px; background: var(--gold); transform-origin: left; animation: hh-reel-rule 5s cubic-bezier(0.4,0,0.2,1) infinite;"></div>
+        </div>
+        <div style="font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--charcoal); margin-bottom: 4px;">Rule draw</div>
+        <div style="font-family: var(--font-body); font-size: 12px; line-height: 1.5; color: var(--stone);">The gold underline wipes in left-to-right after the text lands.</div>
+      </div>
+
+      <!-- Breath ring -->
+      <div style="background: var(--charcoal); border-radius: 4px; padding: 28px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div style="height: 96px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; position: relative; width: 100%;">
+          <div class="hh-breath-ring" style="width: 84px; height: 84px; border-radius: 50%; border: 3px solid var(--water); animation: hh-breath-ring 12s ease-in-out infinite;"></div>
+        </div>
+        <div style="font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--cream); margin-bottom: 4px;">Breath ring</div>
+        <div style="font-family: var(--font-body); font-size: 12px; line-height: 1.5; color: rgba(245,238,224,0.6);">Grow · hold · shrink · hold. The follow-along breathing timer.</div>
+      </div>
+
+      <!-- Word reveal -->
+      <div style="background: var(--wood-deep); border-radius: 4px; padding: 28px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div style="height: 96px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+          <div style="font-family: var(--font-display); font-style: italic; font-size: 32px; color: var(--cream); font-variation-settings: 'SOFT' 80;">
+            <span class="hh-ds-word" style="display: inline-block; animation: hh-ds-word 5s cubic-bezier(0.33,0,0.2,1) infinite; animation-delay: 0.1s;">not&nbsp;</span>
+            <span class="hh-ds-word" style="display: inline-block; color: var(--gold-light); animation: hh-ds-word 5s cubic-bezier(0.33,0,0.2,1) infinite; animation-delay: 0.7s;">forever.</span>
+          </div>
+        </div>
+        <div style="font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--cream); margin-bottom: 4px;">Word reveal</div>
+        <div style="font-family: var(--font-body); font-size: 12px; line-height: 1.5; color: rgba(245,238,224,0.72);">Word-by-word, blur to sharp. Land the key word last, in gold.</div>
+      </div>
+
+    </div>
+
+    <div style="background: rgba(184,153,104,0.09); border: 1px solid var(--cream-deep); border-left: 3px solid var(--gold); border-radius: 4px; padding: 24px 28px;">
+      <div style="font-family: var(--font-body); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--gold-deep); margin-bottom: 12px;">Rules that keep motion on-brand</div>
+      <ul style="margin: 0; padding-left: 18px; font-size: 15px; line-height: 1.85; color: var(--charcoal-soft);">
+        <li>Never bounce, spring, or overshoot — softness comes from long duration, not elastic easing.</li>
+        <li>Always hold. Anything that appears stays on screen long enough to be read before it leaves.</li>
+        <li>One thing moves at a time, or things move in a gentle stagger — never a busy simultaneous entrance.</li>
+        <li>Every pattern has a reduced-motion still: the final, legible frame. Motion is enhancement, never the only way to read it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background: var(--charcoal); margin-top: 110px; padding: 72px 40px;">
+    <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px;">
+      <div style="display: flex; align-items: center; gap: 18px;">
+        <svg viewBox="0 0 200 200" width="44" height="44" role="img" aria-label="mark" style="display:block; flex-shrink:0;">
+          <g transform="translate(100,100)">
+            <circle cx="0" cy="0" r="85" fill="none" stroke="var(--gold-light)" stroke-width="5.7"></circle>
+            <path d="M -34 48.2 C -42.5 14.2, -21.3 -19.8, 11.3 -25.5 C 43.9 -31.2, 63.8 -4.3, 56.7 25.5 C 51 48.2, 28.3 58.1, 8.5 46.8 C -9.9 36.8, -5.7 12.8, 12.8 9.9 C 26.9 8.5, 34 19.8, 28.3 32.6" fill="none" stroke="var(--gold-light)" stroke-width="9.9" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="0" cy="-65.2" r="5.4" fill="var(--gold-light)"></circle><circle cx="63.8" cy="-19.8" r="5.4" fill="var(--gold-light)"></circle><circle cx="39.7" cy="55.3" r="5.4" fill="var(--gold-light)"></circle><circle cx="-39.7" cy="55.3" r="5.4" fill="var(--gold-light)"></circle><circle cx="-63.8" cy="-19.8" r="5.4" fill="var(--gold-light)"></circle>
+          </g>
+        </svg>
+        <div>
+          <div style="font-family: var(--font-display); font-size: 20px; color: var(--cream); font-variation-settings: 'SOFT' 100;">The Healing Haven</div>
+          <div style="font-family: var(--font-body); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-light); margin-top: 4px;">Helen DeLovely, LCSW · SLC</div>
+        </div>
+      </div>
+      <div style="font-family: var(--font-body); font-size: 12px; line-height: 1.7; color: rgba(245,238,224,0.55); text-align: right; max-width: 40ch;">
+        Design system v2 · 2026 · now with the motion language (§07). Fraunces + Manrope from Google Fonts. Never mix in the Private Practice Collective / PracticeOS brand.
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;}body{margin:0;background:#3A352F;}a{color:#8C7344;text-decoration:none;}a:hover{color:#A53F3F;}</style>
+</helmet>
+<div style="--gold:#B89968;--gold-deep:#8C7344;--gold-light:#DDC9A3;--wood:#7A8B6F;--wood-deep:#4D5B45;--water:#7BA7A6;--earth:#C97B5C;--fire:#A53F3F;--fire-soft:#C26565;--cream:#F5EEE0;--cream-light:#FAF6EE;--cream-deep:#ECE2CE;--stone:#A89F92;--charcoal:#252220;--charcoal-soft:#3A352F;--handle:#7A756C;--near-black:#211F1C;--cream-social:#F9F5EC;--font-display:'Fraunces',Georgia,serif;--font-body:'Manrope',-apple-system,'Segoe UI',sans-serif; width:1080px; height:1080px; background:{{ bg }}; display:flex; flex-direction:column; justify-content:space-between; padding:84px; font-family:var(--font-body);">
+  <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+    <div style="width:82px; height:82px;"><dc-import name="Mark" color="{{ markColor }}" hint-size="82px,82px" style="width:82px;height:82px;"></dc-import></div>
+    <span style="font-family:var(--font-display); font-style:italic; font-size:110px; line-height:0.7; color:{{ accent }}; opacity:0.55;">&rdquo;</span>
+  </div>
+  <blockquote style="margin:0;">
+    <p style="margin:0 0 24px; font-family:var(--font-display); font-style:italic; font-weight:450; font-size:{{ quoteSize }}; line-height:1.22; color:{{ ink }}; font-variation-settings:'SOFT' 60;">{{ quote }}</p>
+    <div style="width:84px; height:5px; background:{{ accent }}; margin-bottom:20px;"></div>
+    <div style="font-family:var(--font-body); font-size:22px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:{{ attrColor }};">{{ attribution }}</div>
+  </blockquote>
+  <div style="font-family:var(--font-display); font-size:32px; color:{{ ink }}; font-variation-settings:'SOFT' 60;">{{ brandName }}</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1080},&quot;tone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Gold on cream&quot;,&quot;options&quot;:[&quot;Gold on cream&quot;,&quot;Wood, oversized&quot;,&quot;Fire on charcoal&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;big&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;quote&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;I finally felt like I could exhale in that room.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;attribution&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;A client \u00b7 SLC&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;The Healing Haven&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    const tone = p.tone ?? 'Gold on cream';
+    const map = {
+      'Gold on cream': { bg:'var(--cream)', ink:'var(--near-black)', accent:'var(--gold)', mark:'#B89968', attr:'var(--handle)' },
+      'Wood, oversized': { bg:'var(--wood-deep)', ink:'var(--cream-social)', accent:'var(--gold-light)', mark:'#DDC9A3', attr:'var(--gold-light)' },
+      'Fire on charcoal': { bg:'var(--charcoal)', ink:'var(--cream-social)', accent:'var(--fire)', mark:'#C26565', attr:'var(--gold-light)' },
+    };
+    const c = map[tone] || map['Gold on cream'];
+    return {
+      quote: p.quote ?? 'I finally felt like I could exhale in that room.',
+      attribution: p.attribution ?? 'A client \u00b7 SLC',
+      brandName: p.brandName ?? 'The Healing Haven',
+      quoteSize: p.big ? '92px' : '58px',
+      bg: c.bg, ink: c.ink, accent: c.accent, markColor: c.mark, attrColor: c.attr,
+    };
+  }
+}
+</script>
+</body>
+</html>

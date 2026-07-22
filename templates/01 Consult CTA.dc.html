@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;}body{margin:0;background:#3A352F;}a{color:#8C7344;text-decoration:none;}a:hover{color:#A53F3F;}</style>
+</helmet>
+<div style="--gold:#B89968;--gold-deep:#8C7344;--gold-light:#DDC9A3;--wood:#7A8B6F;--wood-deep:#4D5B45;--water:#7BA7A6;--earth:#C97B5C;--fire:#A53F3F;--fire-soft:#C26565;--cream:#F5EEE0;--cream-light:#FAF6EE;--cream-deep:#ECE2CE;--stone:#A89F92;--charcoal:#252220;--charcoal-soft:#3A352F;--handle:#7A756C;--near-black:#211F1C;--cream-social:#F9F5EC;--font-display:'Fraunces',Georgia,serif;--font-body:'Manrope',-apple-system,'Segoe UI',sans-serif; width:1080px; height:1080px; background:var(--charcoal); background-image:radial-gradient(circle at 85% 12%, rgba(184,153,104,0.16) 0%, transparent 55%); display:flex; flex-direction:column; justify-content:space-between; padding:90px; font-family:var(--font-body);">
+  <div style="width:96px; height:96px;"><dc-import name="Mark" color="#DDC9A3" hint-size="96px,96px" style="width:96px;height:96px;"></dc-import></div>
+  <div>
+    <div style="font-family:var(--font-body); font-size:22px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold-light); margin-bottom:30px;">{{ kicker }}</div>
+    <p style="margin:0 0 46px; font-family:var(--font-display); font-style:italic; font-weight:450; font-size:76px; line-height:1.14; letter-spacing:-0.01em; color:var(--cream-social); font-variation-settings:'SOFT' 70;">{{ headline }}</p>
+    <span style="display:inline-block; font-family:var(--font-body); font-size:27px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--charcoal); background:var(--gold); padding:24px 44px; border-radius:100px;">{{ cta }}</span>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+    <div style="font-family:var(--font-display); font-size:34px; color:var(--cream-social); font-variation-settings:'SOFT' 60;">{{ brandName }}</div>
+    <div style="font-family:var(--font-body); font-size:20px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:rgba(221,201,163,0.85);">{{ meta }}</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1080},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;No pressure, ever&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;headline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Not sure therapy is the right next step?&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;cta&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Book a free consult \u2192&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;meta&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;15 min \u00b7 free&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;The Healing Haven&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      kicker: p.kicker ?? 'No pressure, ever',
+      headline: p.headline ?? 'Not sure therapy is the right next step?',
+      cta: p.cta ?? 'Book a free consult \u2192',
+      brandName: p.brandName ?? 'The Healing Haven',
+      meta: p.meta ?? '15 min \u00b7 free',
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;} body{margin:0;background:#3A352F;} a{color:#8C7344;text-decoration:none;} a:hover{color:#A53F3F;}
+  @keyframes hh-breath-ring { 0%,100%{transform:scale(0.5);} 25%{transform:scale(1);} 50%{transform:scale(1);} 75%{transform:scale(0.5);} }
+  @keyframes hh-breath-glow { 0%,100%{opacity:0.25;} 25%,50%{opacity:0.55;} 75%{opacity:0.25;} }
+  @keyframes hh-lab-a { 0%{opacity:0;} 3%,22%{opacity:1;} 25%,100%{opacity:0;} }
+  @keyframes hh-lab-b { 0%,25%{opacity:0;} 28%,47%{opacity:1;} 50%,100%{opacity:0;} }
+  @keyframes hh-lab-c { 0%,50%{opacity:0;} 53%,72%{opacity:1;} 75%,100%{opacity:0;} }
+  @keyframes hh-lab-d { 0%,75%{opacity:0;} 78%,97%{opacity:1;} 100%{opacity:0;} }
+  @media (prefers-reduced-motion: reduce){ .hh-breath-ring,.hh-breath-glow,.hh-lab{animation:none!important;} .hh-breath-ring{transform:scale(0.85)!important;} .hh-lab{opacity:0!important;} .hh-lab.hh-lab-a{opacity:1!important;} }
+</style>
+</helmet>
+<div style="--gold:#B89968;--gold-deep:#8C7344;--gold-light:#DDC9A3;--wood:#7A8B6F;--wood-deep:#4D5B45;--water:#7BA7A6;--earth:#C97B5C;--fire:#A53F3F;--fire-soft:#C26565;--cream:#F5EEE0;--cream-light:#FAF6EE;--cream-deep:#ECE2CE;--stone:#A89F92;--charcoal:#252220;--charcoal-soft:#3A352F;--handle:#7A756C;--near-black:#211F1C;--cream-social:#F9F5EC;--font-display:'Fraunces',Georgia,serif;--font-body:'Manrope',-apple-system,'Segoe UI',sans-serif; width:1080px; height:1080px; background:var(--charcoal); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:90px; position:relative; font-family:var(--font-body);">
+  <div style="position:absolute; top:70px; left:0; right:0; text-align:center; font-family:var(--font-body); font-size:26px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:var(--gold-light);">{{ kicker }}</div>
+  <div style="position:relative; width:620px; height:620px; display:flex; align-items:center; justify-content:center;">
+    <div class="hh-breath-glow" style="position:absolute; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle, rgba(123,167,166,0.6) 0%, transparent 68%); animation:hh-breath-glow 16s ease-in-out infinite;"></div>
+    <div class="hh-breath-ring" style="position:absolute; width:560px; height:560px; border-radius:50%; border:4px solid var(--water); animation:hh-breath-ring 16s ease-in-out infinite;"></div>
+    <div class="hh-breath-ring" style="position:absolute; width:560px; height:560px; border-radius:50%; background:rgba(123,167,166,0.14); animation:hh-breath-ring 16s ease-in-out infinite;"></div>
+    <div style="position:relative; width:460px; height:160px;">
+      <div class="hh-lab hh-lab-a" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-style:italic; font-weight:450; font-size:68px; color:var(--cream-social); font-variation-settings:'SOFT' 80; animation:hh-lab-a 16s linear infinite;">{{ labelIn }}</div>
+      <div class="hh-lab" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-style:italic; font-weight:450; font-size:68px; color:var(--cream-social); font-variation-settings:'SOFT' 80; animation:hh-lab-b 16s linear infinite;">{{ labelHold1 }}</div>
+      <div class="hh-lab" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-style:italic; font-weight:450; font-size:68px; color:var(--cream-social); font-variation-settings:'SOFT' 80; animation:hh-lab-c 16s linear infinite;">{{ labelOut }}</div>
+      <div class="hh-lab" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-style:italic; font-weight:450; font-size:68px; color:var(--cream-social); font-variation-settings:'SOFT' 80; animation:hh-lab-d 16s linear infinite;">{{ labelHold2 }}</div>
+    </div>
+  </div>
+  <div style="position:absolute; bottom:70px; left:0; right:0; text-align:center; font-family:var(--font-display); font-size:34px; color:var(--cream-social); font-variation-settings:'SOFT' 60;">{{ brandName }}</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1080},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Breathe with me \u00b7 1 min&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;labelIn&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Breathe in&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;labelHold1&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Hold&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;labelOut&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Breathe out&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;labelHold2&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Hold&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;The Healing Haven&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      kicker: p.kicker ?? 'Breathe with me \u00b7 1 min',
+      labelIn: p.labelIn ?? 'Breathe in',
+      labelHold1: p.labelHold1 ?? 'Hold',
+      labelOut: p.labelOut ?? 'Breathe out',
+      labelHold2: p.labelHold2 ?? 'Hold',
+      brandName: p.brandName ?? 'The Healing Haven',
+    };
+  }
+}
+</script>
+</body>
+</html>

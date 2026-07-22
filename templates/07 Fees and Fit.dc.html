@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;}body{margin:0;background:#3A352F;}a{color:#8C7344;text-decoration:none;}a:hover{color:#A53F3F;}</style>
+</helmet>
+<div style="--gold:#B89968;--gold-deep:#8C7344;--gold-light:#DDC9A3;--wood:#7A8B6F;--wood-deep:#4D5B45;--water:#7BA7A6;--earth:#C97B5C;--fire:#A53F3F;--fire-soft:#C26565;--cream:#F5EEE0;--cream-light:#FAF6EE;--cream-deep:#ECE2CE;--stone:#A89F92;--charcoal:#252220;--charcoal-soft:#3A352F;--handle:#7A756C;--near-black:#211F1C;--cream-social:#F9F5EC;--font-display:'Fraunces',Georgia,serif;--font-body:'Manrope',-apple-system,'Segoe UI',sans-serif; width:1080px; height:1350px; background:var(--cream); display:flex; flex-direction:column; padding:90px; font-family:var(--font-body);">
+  <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:44px;">
+    <div style="width:100px; height:100px;"><dc-import name="Mark" color="#B89968" hint-size="100px,100px" style="width:100px;height:100px;"></dc-import></div>
+    <span style="font-family:var(--font-body); font-size:22px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--cream-social); background:var(--gold-deep); padding:13px 24px; border-radius:100px;">{{ kicker }}</span>
+  </div>
+  <h3 style="margin:0 0 40px; font-family:var(--font-display); font-style:italic; font-weight:450; font-size:68px; line-height:1.08; letter-spacing:-0.01em; color:var(--near-black); font-variation-settings:'SOFT' 60;">{{ title }}</h3>
+  <div style="display:flex; gap:24px; margin-bottom:40px;">
+    <div style="flex:1; background:var(--cream-light); border:2px solid var(--cream-deep); border-radius:8px; padding:40px 36px;">
+      <div style="font-family:var(--font-body); font-size:24px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--handle); margin-bottom:18px;">{{ tierAName }}</div>
+      <div style="font-family:var(--font-display); font-size:88px; line-height:0.9; color:var(--near-black); font-variation-settings:'SOFT' 40;">{{ tierAPrice }}</div>
+      <div style="font-family:var(--font-body); font-size:26px; color:var(--charcoal-soft); margin-top:12px;">{{ unit }}</div>
+    </div>
+    <div style="flex:1; background:var(--charcoal); border-radius:8px; padding:40px 36px;">
+      <div style="font-family:var(--font-body); font-size:24px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--gold-light); margin-bottom:18px;">{{ tierBName }}</div>
+      <div style="font-family:var(--font-display); font-size:88px; line-height:0.9; color:var(--cream-social); font-variation-settings:'SOFT' 40;">{{ tierBPrice }}</div>
+      <div style="font-family:var(--font-body); font-size:26px; color:rgba(249,245,236,0.75); margin-top:12px;">{{ unit }}</div>
+    </div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:18px;">
+    <sc-for list="{{ notes }}" as="note" hint-placeholder-count="3">
+      <div style="display:flex; align-items:baseline; gap:20px; font-family:var(--font-body); font-size:30px; line-height:1.4; color:var(--charcoal-soft);">
+        <span style="color:var(--gold-deep); font-weight:700;">&mdash;</span><span>{{ note }}</span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="flex:1;"></div>
+  <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-top:40px;">
+    <div style="font-family:var(--font-display); font-size:34px; color:var(--near-black); font-variation-settings:'SOFT' 60;">{{ brandName }}</div>
+    <div style="font-family:var(--font-body); font-size:20px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--handle);">{{ footNote }}</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Investment&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Simple, honest pricing&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tierAName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Standard&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tierAPrice&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$189&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tierBName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Member&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tierBPrice&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$123&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;unit&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;per session&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;footNote&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Full details in bio&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;The Healing Haven&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;notes&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      kicker: p.kicker ?? 'Investment',
+      title: p.title ?? 'Simple, honest pricing',
+      tierAName: p.tierAName ?? 'Standard',
+      tierAPrice: p.tierAPrice ?? '$189',
+      tierBName: p.tierBName ?? 'Member',
+      tierBPrice: p.tierBPrice ?? '$123',
+      unit: p.unit ?? 'per session',
+      brandName: p.brandName ?? 'The Healing Haven',
+      footNote: p.footNote ?? 'Full details in bio',
+      notes: p.notes ?? [
+        'Members save $66 every session.',
+        'Free 15-minute consult before you commit.',
+        'Superbills provided for out-of-network claims.',
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

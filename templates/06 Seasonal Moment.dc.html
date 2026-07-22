@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;}body{margin:0;background:#3A352F;}a{color:#8C7344;text-decoration:none;}a:hover{color:#A53F3F;}</style>
+</helmet>
+<div style="--gold:#B89968;--gold-deep:#8C7344;--gold-light:#DDC9A3;--wood:#7A8B6F;--wood-deep:#4D5B45;--water:#7BA7A6;--earth:#C97B5C;--fire:#A53F3F;--fire-soft:#C26565;--cream:#F5EEE0;--cream-light:#FAF6EE;--cream-deep:#ECE2CE;--stone:#A89F92;--charcoal:#252220;--charcoal-soft:#3A352F;--handle:#7A756C;--near-black:#211F1C;--cream-social:#F9F5EC;--font-display:'Fraunces',Georgia,serif;--font-body:'Manrope',-apple-system,'Segoe UI',sans-serif; width:1080px; height:1350px; background:{{ bg }}; border:{{ border }}; display:flex; flex-direction:column; justify-content:space-between; padding:{{ pad }}; font-family:var(--font-body);">
+  <div style="min-height:96px; display:flex; align-items:flex-start;">
+    <sc-if value="{{ showDots }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex; gap:18px;">
+        <span style="width:34px; height:34px; border-radius:100px; background:var(--fire);"></span>
+        <span style="width:34px; height:34px; border-radius:100px; background:var(--earth);"></span>
+        <span style="width:34px; height:34px; border-radius:100px; background:var(--gold);"></span>
+        <span style="width:34px; height:34px; border-radius:100px; background:var(--wood);"></span>
+        <span style="width:34px; height:34px; border-radius:100px; background:var(--water);"></span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ showMark }}" hint-placeholder-val="{{ true }}">
+      <div style="width:96px; height:96px;"><dc-import name="Mark" color="{{ markColor }}" hint-size="96px,96px" style="width:96px;height:96px;"></dc-import></div>
+    </sc-if>
+  </div>
+  <div>
+    <div style="font-family:var(--font-body); font-size:24px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:{{ kickerColor }}; margin-bottom:26px;">{{ kicker }}</div>
+    <p style="margin:0 0 34px; font-family:var(--font-display); font-style:italic; font-weight:450; font-size:74px; line-height:1.12; color:{{ ink }}; font-variation-settings:'SOFT' 70;">{{ headline }}</p>
+    <sc-if value="{{ resource }}" hint-placeholder-val="{{ false }}">
+      <div style="font-family:var(--font-body); font-size:30px; font-weight:700; letter-spacing:1px; color:var(--cream-social); background:rgba(33,31,28,0.22); display:inline-block; padding:16px 28px; border-radius:100px;">{{ resource }}</div>
+    </sc-if>
+  </div>
+  <div style="font-family:var(--font-display); font-size:32px; color:{{ ink }}; font-variation-settings:'SOFT' 60;">{{ brandName }}</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350},&quot;moment&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Mental Health Month&quot;,&quot;options&quot;:[&quot;Mental Health Month&quot;,&quot;Pride&quot;,&quot;Prevention Week&quot;,&quot;Grief &amp; holidays&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;headline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;resource&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;The Healing Haven&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    const moment = p.moment ?? 'Mental Health Month';
+    const M = {
+      'Mental Health Month': { bg:'var(--wood-deep)', ink:'var(--cream-social)', kickerColor:'var(--gold-light)', markColor:'#DDC9A3', kicker:'May \u00b7 Awareness', headline:'Taking care of your mind is not a luxury.', dots:false, mark:true, resource:'', border:'none', pad:'90px' },
+      'Pride': { bg:'var(--charcoal)', ink:'var(--cream-social)', kickerColor:'var(--gold-light)', markColor:'#DDC9A3', kicker:'June \u00b7 Pride', headline:'You belong here, exactly as you are.', dots:true, mark:false, resource:'', border:'none', pad:'90px' },
+      'Prevention Week': { bg:'linear-gradient(160deg, #7BA7A6 0%, #5E8887 100%)', ink:'var(--cream-social)', kickerColor:'rgba(249,245,236,0.85)', markColor:'#F9F5EC', kicker:'Sept \u00b7 Prevention Week', headline:'You are not a burden. Reaching out is allowed.', dots:false, mark:true, resource:'988 \u00b7 call or text, 24/7', border:'none', pad:'90px' },
+      'Grief & holidays': { bg:'var(--cream)', ink:'var(--near-black)', kickerColor:'var(--earth)', markColor:'#C97B5C', kicker:'December', headline:'The holidays can hold grief too. Both are welcome here.', dots:false, mark:true, resource:'', border:'8px solid var(--earth)', pad:'82px' },
+    };
+    const c = M[moment] || M['Mental Health Month'];
+    return {
+      bg: c.bg, ink: c.ink, kickerColor: c.kickerColor, markColor: c.markColor,
+      kicker: p.kicker || c.kicker,
+      headline: p.headline || c.headline,
+      resource: p.resource != null && p.resource !== '' ? p.resource : c.resource,
+      showDots: c.dots, showMark: c.mark, border: c.border, pad: c.pad,
+      brandName: p.brandName ?? 'The Healing Haven',
+    };
+  }
+}
+</script>
+</body>
+</html>

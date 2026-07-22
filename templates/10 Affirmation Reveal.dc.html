@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;} body{margin:0;background:#3A352F;} a{color:#8C7344;text-decoration:none;} a:hover{color:#A53F3F;}
+  @keyframes hh-word { 0%,8%{opacity:0;transform:translateY(18px);filter:blur(6px);} 24%{opacity:1;transform:translateY(0);filter:blur(0);} 88%{opacity:1;transform:translateY(0);filter:blur(0);} 100%{opacity:0;transform:translateY(-10px);filter:blur(4px);} }
+  @media (prefers-reduced-motion: reduce){ .hh-word{animation:none!important;opacity:1!important;transform:none!important;filter:none!important;} }
+</style>
+</helmet>
+<div style="--gold:#B89968;--gold-deep:#8C7344;--gold-light:#DDC9A3;--wood:#7A8B6F;--wood-deep:#4D5B45;--water:#7BA7A6;--earth:#C97B5C;--fire:#A53F3F;--fire-soft:#C26565;--cream:#F5EEE0;--cream-light:#FAF6EE;--cream-deep:#ECE2CE;--stone:#A89F92;--charcoal:#252220;--charcoal-soft:#3A352F;--handle:#7A756C;--near-black:#211F1C;--cream-social:#F9F5EC;--font-display:'Fraunces',Georgia,serif;--font-body:'Manrope',-apple-system,'Segoe UI',sans-serif; width:1080px; height:1920px; background:var(--wood-deep); background-image:radial-gradient(circle at 50% 60%, rgba(221,201,163,0.12) 0%, transparent 62%); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:120px; font-family:var(--font-body);">
+  <div style="font-family:var(--font-body); font-size:30px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:var(--gold-light); margin-bottom:70px;">{{ kicker }}</div>
+  <div style="font-family:var(--font-display); font-style:italic; font-weight:450; font-size:118px; line-height:1.14; color:var(--cream-social); font-variation-settings:'SOFT' 80;">
+    <sc-for list="{{ words }}" as="w" hint-placeholder-count="5">
+      <span class="hh-word" style="display:inline-block; color:{{ w.color }}; animation:hh-word {{ dur }}s cubic-bezier(0.33,0,0.2,1) infinite; animation-delay:{{ w.delay }}s;">{{ w.text }}&nbsp;</span>
+    </sc-for>
+  </div>
+  <div style="margin-top:90px; font-family:var(--font-display); font-size:40px; color:var(--cream-social); font-variation-settings:'SOFT' 60;">{{ brandName }}</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1920},&quot;text&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;This feeling is not forever.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;A reminder for today&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;The Healing Haven&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    const text = p.text ?? 'This feeling is not forever.';
+    const parts = text.trim().split(/\s+/);
+    const words = parts.map((t, i) => ({
+      text: t,
+      delay: (0.2 + i * 0.6).toFixed(2),
+      color: i === parts.length - 1 ? 'var(--gold-light)' : 'var(--cream-social)',
+    }));
+    return {
+      kicker: p.kicker ?? 'A reminder for today',
+      words,
+      dur: Math.max(6, 2 + parts.length * 1.2).toFixed(1),
+      brandName: p.brandName ?? 'The Healing Haven',
+    };
+  }
+}
+</script>
+</body>
+</html>
