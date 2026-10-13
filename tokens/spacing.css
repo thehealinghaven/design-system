@@ -1,0 +1,29 @@
+:root{
+--space-1:4px;
+--space-2:8px;
+--space-3:12px;
+--space-4:16px;
+--space-5:20px;
+--space-6:24px;
+--space-7:30px;
+--space-8:34px;
+--space-9:40px;
+--space-10:48px;
+--space-11:56px;
+--space-12:72px;
+--space-13:88px;
+--space-14:96px;
+--space-15:110px;
+
+--measure:1180px;          /* page content max width */
+--measure-prose:66ch;      /* body copy measure */
+--measure-headline:22ch;   /* headline measure */
+
+--gutter-page:40px;
+--section-y:110px;         /* vertical rhythm between sections */
+--card-pad:40px;
+--card-pad-sm:30px;
+--grid-gap:24px;
+--grid-gap-sm:16px;
+--grid-gap-lg:48px;
+}

@@ -1,0 +1,76 @@
+<!-- @dsCard group="Foundations" viewport="900x600" name="Voice · two tiers" subtitle="Brand voice vs provider voice — who says I, who signs off, and which surface gets which" -->
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+body{margin:0;background:var(--cream);font-family:var(--font-body);color:var(--charcoal-soft)}
+.wrap{padding:30px 32px;display:flex;flexDirection:column}
+h1{margin:0 0 6px;font-family:var(--font-display);font-variation-settings:var(--soft-restrained);font-weight:var(--display-weight);font-size:var(--text-title);letter-spacing:var(--tracking-title);color:var(--charcoal)}
+.lede{margin:0 0 30px;font-size:var(--text-body-lg);line-height:var(--leading-body);max-width:66ch}
+.eyebrow{font-size:var(--text-eyebrow-size);font-weight:600;letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--gold-deep)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:26px}
+.col{background:var(--cream-light);border:var(--hairline);border-radius:var(--radius);padding:26px 26px 24px}
+.col.provider{border-left:3px solid var(--wood-deep)}
+.col.brand{border-left:3px solid var(--gold)}
+.col h2{margin:12px 0 4px;font-family:var(--font-display);font-variation-settings:var(--soft-warm);font-weight:var(--display-weight);font-size:var(--text-heading);color:var(--charcoal)}
+.col .who{margin:0 0 16px;font-size:var(--text-meta);color:var(--handle)}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:var(--text-body-sm);line-height:1.5}
+dt{font-weight:600;color:var(--charcoal);white-space:nowrap}
+dd{margin:0}
+.say{margin:16px 0 0;padding-top:15px;border-top:var(--hairline);font-family:var(--font-display);font-style:italic;font-size:16px;line-height:1.5;color:var(--charcoal)}
+.no{margin:8px 0 0;font-size:var(--text-body-sm);color:var(--stone);text-decoration:line-through}
+table{width:100%;border-collapse:collapse;font-size:var(--text-body-sm)}
+caption{text-align:left;padding-bottom:12px}
+th,td{text-align:left;padding:9px 14px 9px 0;border-bottom:var(--hairline)}
+th{font-size:var(--text-micro);font-weight:600;letter-spacing:var(--tracking-caption);text-transform:uppercase;color:var(--gold-deep)}
+td:last-child{color:var(--handle)}
+.pill{display:inline-block;padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:500}
+.pill.b{background:var(--wash-gold);color:var(--gold-deep)}
+.pill.p{background:var(--wash-wood);color:var(--wood-deep)}
+a{color:var(--gold-deep)}a:hover{color:var(--fire)}
+</style></head><body><div class="wrap">
+<span class="eyebrow">Voice · two tiers</span>
+<h1>Who is speaking?</h1>
+<p class="lede">The original guide assumed one clinician, so every published line said <em>I</em>. With more than one provider and more than one city, <em>I</em> has to belong to a person and the brand needs a voice of its own. Two tiers, one rule: <strong>the brand never says <em>I</em>, and a provider never speaks for the brand.</strong></p>
+<div class="cols">
+  <div class="col brand">
+    <span class="eyebrow">Tier 1</span>
+    <h2>Brand voice</h2>
+    <p class="who">The Healing Haven · third person · no sign-off</p>
+    <dl>
+      <dt>Person</dt><dd>Third person. "The Healing Haven", "the practice", "your provider". "You" for the reader.</dd>
+      <dt>We</dt><dd>Only for the collective of providers — "the providers here", not "we'll talk for fifteen minutes".</dd>
+      <dt>Sign-off</dt><dd>None. The mark signs it.</dd>
+      <dt>Job</dt><dd>Explain what exists, who it's for, what it costs, how to start.</dd>
+    </dl>
+    <p class="say">"Every provider here owns their practice. What they share is a standard of care."</p>
+    <p class="no">"I'll help you find the right fit." — the brand has no I.</p>
+  </div>
+  <div class="col provider">
+    <span class="eyebrow">Tier 2</span>
+    <h2>Provider voice</h2>
+    <p class="who">A named clinician · first person · signs off</p>
+    <dl>
+      <dt>Person</dt><dd>First person singular. "I", their own name.</dd>
+      <dt>We</dt><dd>Unchanged from the original guide — the shared work of a session. "We move at the speed of safety."</dd>
+      <dt>Sign-off</dt><dd>Em dash + first name, e.g. "— Helen". Never "— The Healing Haven".</dd>
+      <dt>Job</dt><dd>Say how they work and what it's like to sit with them.</dd>
+    </dl>
+    <p class="say">"Therapy here is slow. That's the point. — Helen"</p>
+    <p class="no">"We now offer GLP-1 management at all locations." — that's brand voice.</p>
+  </div>
+</div>
+<table>
+  <caption><span class="eyebrow">Which tier owns which surface</span></caption>
+  <thead><tr><th>Surface</th><th>Tier</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>Home, services, fees, locations, policy</td><td><span class="pill b">Brand</span></td><td>Nothing here signs off</td></tr>
+    <tr><td>Provider bio &amp; card copy</td><td><span class="pill p">Provider</span></td><td>Their words, their name</td></tr>
+    <tr><td>Provider directory page (intro + CTA)</td><td><span class="pill b">Brand</span></td><td>Provider voice only inside each card</td></tr>
+    <tr><td>Treatment explainer (ketamine, GLP-1, labs)</td><td><span class="pill b">Brand</span></td><td>Plus the disclosure pattern</td></tr>
+    <tr><td>Social caption</td><td><span class="pill p">Provider</span></td><td>Attribute in the slug; brand voice only for announcements</td></tr>
+    <tr><td>Consult confirmation &amp; portal messages</td><td><span class="pill p">Provider</span></td><td>From the person they're about to meet</td></tr>
+    <tr><td>Intake, consent, billing, crisis resources</td><td><span class="pill b">Brand</span></td><td>Plain and unpoetic. This is the one place the voice gets literal</td></tr>
+    <tr><td>New-location announcement</td><td><span class="pill b">Brand</span></td><td>Never "I'm excited to announce"</td></tr>
+  </tbody>
+</table>
+</div></body></html>

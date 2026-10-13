@@ -1,0 +1,25 @@
+:root{
+--radius-xs:2px;
+--radius:4px;              /* the house radius */
+--radius-md:8px;           /* social/print cards */
+--radius-lg:16px;
+--radius-pill:100px;
+--radius-petal:34px 34px 6px 34px;   /* signature photo frame */
+--radius-petal-inner:22px 22px 2px 22px;
+
+--hairline:1px solid var(--cream-deep); /* @kind other */
+--hairline-gold:1px solid rgba(184,153,104,0.28); /* @kind other */
+--rule-accent:3px;         /* left-accent rule on aside cards */
+
+--shadow-lift:0 8px 22px rgba(184,153,104,0.10);
+--shadow-card-hover:0 10px 26px rgba(184,153,104,0.12);
+--shadow-button:0 4px 14px rgba(184,153,104,0.25);
+--shadow-button-hover:0 6px 18px rgba(140,115,68,0.32);
+--shadow-photo:0 24px 60px rgba(37,34,32,0.14);
+--shadow-social:0 20px 50px rgba(37,34,32,0.14);
+
+--gradient-signature:linear-gradient(158deg,#252220 0%,#3A352F 50%,#8C7344 100%); /* @kind color */
+--glow-gold:radial-gradient(circle at 18% 20%,rgba(184,153,104,0.10) 0%,transparent 55%); /* @kind color */
+--glow-wood:radial-gradient(circle at 84% 82%,rgba(122,139,111,0.08) 0%,transparent 55%); /* @kind color */
+--scrim-charcoal:rgba(37,34,32,0.70);
+}

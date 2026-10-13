@@ -1,0 +1,78 @@
+:root{
+/* ---- Five elements (base) ---- */
+--gold:#B89968;            /* Metal · primary accent, CTAs */
+--gold-deep:#8C7344;       /* text-safe gold on cream */
+--gold-light:#DDC9A3;      /* mark + type on dark */
+--wood:#7A8B6F;            /* Wood · sage, footer rules on dark */
+--wood-deep:#4D5B45;       /* deep-green feature surface */
+--water:#7BA7A6;           /* Water · teal */
+--teal-pillar:#5E8887;     /* Nervous System pillar accent */
+--earth:#C97B5C;           /* Earth · terracotta */
+--terracotta:#A75F42;      /* Community pillar accent */
+--fire:#A53F3F;            /* Fire · signature, 1–2% only */
+--fire-soft:#C26565;       /* fire on dark grounds */
+
+/* ---- Warm neutrals (base) ---- */
+--cream-light:#FAF6EE;
+--cream:#F5EEE0;
+--cream-social:#F9F5EC;    /* social/print foundation bg */
+--cream-deep:#ECE2CE;      /* hairline borders, tinted fields */
+--stone:#A89F92;           /* quiet metadata */
+--handle:#7A756C;          /* @handle + footnote grey */
+--charcoal-soft:#3A352F;   /* body text */
+--charcoal:#252220;        /* headings · dark surface */
+--near-black:#211F1C;      /* social/print headline black */
+
+/* ---- Tinted accent washes (tags, callouts) ---- */
+--wash-gold:rgba(184,153,104,0.14);
+--wash-wood:rgba(122,139,111,0.16);
+--wash-water:rgba(123,167,166,0.16);
+--wash-earth:rgba(201,123,92,0.16);
+--wash-fire:rgba(165,63,63,0.12);
+--on-wash-water:#3E6E6D;
+--on-wash-earth:#9E4F32;
+
+/* ---- Semantic aliases ---- */
+--text-strong:var(--charcoal);
+--text-body:var(--charcoal-soft);
+--text-muted:var(--stone);
+--text-accent:var(--gold-deep);
+--text-on-dark:var(--cream);
+--text-on-dark-muted:rgba(245,238,224,0.7);
+--text-eyebrow:var(--gold-deep);
+--text-eyebrow-on-dark:var(--gold-light);
+
+--surface-page:var(--cream);
+--surface-card:var(--cream-light);
+--surface-sunken:var(--cream-deep);
+--surface-deep:var(--charcoal);
+--surface-feature:var(--wood-deep);
+--surface-functional:#FFFFFF;  /* in-product cards + forms only — never marketing */
+
+--border-hairline:var(--cream-deep);
+--border-gold:rgba(184,153,104,0.28);
+--border-on-dark:rgba(245,238,224,0.12);
+
+--accent-primary:var(--gold);
+--accent-signature:var(--fire);
+
+/* ---- Provider element accents ----
+   Each provider at The Healing Haven is assigned one of the five elements as a
+   personal accent. These are the TEXT-SAFE values (AA on cream); use --wash-* for
+   the matching tint. A provider directory is the one place the "no more than two
+   element colors per layout" rule is suspended — see readme. */
+--provider-metal:var(--gold-deep);
+--provider-wood:var(--wood-deep);
+--provider-water:var(--on-wash-water);
+--provider-earth:var(--on-wash-earth);
+--provider-fire:var(--fire);
+
+/* ---- Content-pillar accents (Mon→Sun) ---- */
+--pillar-nervous-system:var(--teal-pillar);
+--pillar-emdr:var(--fire);
+--pillar-community:var(--terracotta);
+--pillar-adhd:var(--gold-deep);
+--pillar-practice-life:var(--wood-deep);
+--pillar-belonging:var(--gold-deep);
+--pillar-timely:var(--fire);
+}
