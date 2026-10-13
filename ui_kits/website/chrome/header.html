@@ -1,0 +1,99 @@
+<!-- HH-SITE-HEADER:BEGIN  (home-page header: announce bar + nav — reusable on any page) -->
+<style>
+  .hh-site-head {
+    --hh-gold:#B89968; --hh-gold-deep:#8C7344; --hh-gold-light:#DDC9A3;
+    --hh-cream-light:#FAF6EE; --hh-charcoal:#252220; --hh-charcoal-soft:#3A352F;
+    width: 100vw; max-width: 100vw;
+    margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px; line-height: 1.65; color: var(--hh-charcoal-soft);
+    -webkit-font-smoothing: antialiased; background: #FFFFFF;
+    position: relative; z-index: 90;
+  }
+  .hh-site-head, .hh-site-head * { box-sizing: border-box; margin: 0; padding: 0; }
+  .hh-site-head a { text-decoration: none; }
+  .hh-site-head .hh-announce {
+    background: var(--hh-charcoal); color: var(--hh-cream-light);
+    text-align: center; font-size: 13.5px; font-weight: 500; padding: 12px 20px;
+  }
+  .hh-site-head .hh-announce b { color: var(--hh-gold-light); font-weight: 700; }
+  .hh-site-head .hh-wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .hh-site-head .hh-check { position: absolute; opacity: 0; pointer-events: none; }
+  .hh-site-head .hh-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 0; gap: 16px;
+  }
+  .hh-site-head .hh-logo { font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: 22px; line-height: 1.2; color: var(--hh-charcoal); }
+  .hh-site-head .hh-logo span {
+    display: block; font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--hh-gold-deep);
+  }
+  .hh-site-head .hh-links { display: flex; gap: 26px; font-size: 13px; font-weight: 600; }
+  .hh-site-head .hh-links a { color: var(--hh-charcoal-soft); }
+  .hh-site-head .hh-links a:hover { color: var(--hh-gold-deep); }
+  .hh-site-head .hh-ctas { display: flex; gap: 12px; align-items: center; }
+  .hh-site-head .hh-btn {
+    display: inline-block; font-weight: 600; font-size: 15px; line-height: 1.65;
+    border-radius: 100px; padding: 13px 28px; white-space: nowrap;
+    transition: .25s cubic-bezier(.25,.1,.25,1);
+  }
+  .hh-site-head .hh-btn-outline { border: 1px solid var(--hh-gold); color: var(--hh-gold-deep); background: transparent; padding: 12px 27px; }
+  .hh-site-head .hh-btn-outline:hover { background: var(--hh-gold); color: var(--hh-charcoal); }
+  .hh-site-head .hh-btn-solid { background: var(--hh-gold); color: var(--hh-charcoal); }
+  .hh-site-head .hh-btn-solid:hover { background: var(--hh-gold-deep); color: #fff; }
+  .hh-site-head .hh-burger {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    width: 44px; height: 44px; padding: 10px; margin-right: -8px; cursor: pointer; border-radius: 8px;
+  }
+  .hh-site-head .hh-burger span { display: block; height: 2px; border-radius: 2px; background: var(--hh-charcoal); transition: transform .25s ease, opacity .2s ease; }
+  .hh-site-head .hh-check:checked ~ .hh-wrap .hh-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hh-site-head .hh-check:checked ~ .hh-wrap .hh-burger span:nth-child(2) { opacity: 0; }
+  .hh-site-head .hh-check:checked ~ .hh-wrap .hh-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .hh-site-head .hh-panel { display: none; border-top: 1px solid rgba(184,153,104,.22); }
+  .hh-site-head .hh-check:checked ~ .hh-panel { display: block; }
+  .hh-site-head .hh-panel .hh-wrap { padding-top: 8px; padding-bottom: 24px; }
+  .hh-site-head .hh-panel a.hh-plink {
+    display: block; padding: 14px 2px; border-bottom: 1px solid rgba(184,153,104,.16);
+    font-size: 15px; font-weight: 600; color: var(--hh-charcoal);
+  }
+  .hh-site-head .hh-panel a.hh-plink:hover { color: var(--hh-gold-deep); }
+  .hh-site-head .hh-panel .hh-btn { display: block; text-align: center; margin-top: 14px; }
+  @media (max-width: 980px) {
+    .hh-site-head .hh-links, .hh-site-head .hh-ctas { display: none; }
+    .hh-site-head .hh-burger { display: flex; }
+    .hh-site-head .hh-bar { padding: 18px 0; }
+  }
+  @media (max-width: 480px) {
+    .hh-site-head .hh-wrap { padding: 0 20px; }
+    .hh-site-head .hh-announce { font-size: 13px; padding: 10px 16px; }
+  }
+</style>
+<header class="hh-site-head">
+  <div class="hh-announce">Now accepting new clients — <b>free 15-minute consults</b>, in person or by phone</div>
+  <input type="checkbox" id="hh-site-menu" class="hh-check" aria-hidden="true">
+  <div class="hh-wrap">
+    <nav class="hh-bar" aria-label="Primary">
+      <a class="hh-logo" href="/home">The Healing Haven<span>Salt Lake City</span></a>
+      <div class="hh-links">
+        <a href="/home#haven">The Haven</a><a href="/home#team">Team</a><a href="/home#pricing">Pricing</a><a href="/home#faq">FAQ</a><a href="/membership">Membership</a>
+      </div>
+      <div class="hh-ctas">
+        <a class="hh-btn hh-btn-outline" href="/membership">Join membership</a>
+        <a class="hh-btn hh-btn-solid" href="/consult">Book a free consult</a>
+      </div>
+      <label for="hh-site-menu" class="hh-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+    </nav>
+  </div>
+  <div class="hh-panel">
+    <div class="hh-wrap">
+      <a class="hh-plink" href="/home#haven">The Haven</a>
+      <a class="hh-plink" href="/home#team">Team</a>
+      <a class="hh-plink" href="/home#pricing">Pricing</a>
+      <a class="hh-plink" href="/home#faq">FAQ</a>
+      <a class="hh-plink" href="/membership">Membership</a>
+      <a class="hh-btn hh-btn-solid" href="/consult">Book a free consult</a>
+      <a class="hh-btn hh-btn-outline" href="/membership">Join membership</a>
+    </div>
+  </div>
+</header>
+<!-- HH-SITE-HEADER:END -->
