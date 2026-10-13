@@ -16,6 +16,7 @@
 --space-15:110px;
 
 --measure:1180px;          /* page content max width */
+--measure-content:860px;   /* card grids, link rows on the live site */
 --measure-prose:66ch;      /* body copy measure */
 --measure-headline:22ch;   /* headline measure */
 

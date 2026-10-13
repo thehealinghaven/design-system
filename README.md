@@ -53,9 +53,9 @@ Fonts are **Fraunces** and **Manrope**, both from Google Fonts — the upstream 
 - \~\~"Become your best self with expert guidance."\~\~
 - No clinical-outcome, diagnosis-assuming, guaranteed-healing, or insurance/HIPAA claims.
 
-**Anatomy of a post / section:** eyebrow (tracked caps pillar label) → hook (one plain human line, a real question or a grounded truth — never a shame hook) → body (2–4 sentences that actually answer it) → CTA + sign-off ("Begin a Consult →", "Book the Free 15-Min Consult", "Learn how I work →", then "— Helen").
+**Anatomy of a post / section:** eyebrow (tracked caps pillar label) → hook (one plain human line, a real question or a grounded truth — never a shame hook) → body (2–4 sentences that actually answer it) → CTA + sign-off ("Begin a Consult →", "Book the Free 15-Min Consult", "Explore membership →", then "— Helen").
 
-**CTA vocabulary:** *Begin a Consult →* · *Book the free 15-min consult* · *Learn how I work →* · *Member Login*. Always paired with the reassurance "15 min · free · no obligation".
+**CTA vocabulary:** *Begin a Consult →* · *Book the free 15-min consult* · *Explore membership →* · *Member Login*. Always paired with the reassurance "15 min · free · no obligation".
 
 **Content pillars** (one per weekday, each with its own accent): Mon Nervous System Science · Tue EMDR & Trauma-Informed Care · Wed Community & Local SLC · Thu Adult ADHD & Neurodivergent · Fri Practice Life / FAQ Friday · Sat LGBTQ+ Affirming & Belonging · Sun Timely / Awareness Hooks.
 
@@ -65,9 +65,9 @@ Fonts are **Fraunces** and **Manrope**, both from Google Fonts — the upstream 
 
 **Palette — organized by the five elements.** Metal (gold `#B89968`) leads. Wood (sage `#7A8B6F`), water (teal `#7BA7A6`) and earth (terracotta `#C97B5C`) hold quiet positions around it. Fire (`#A53F3F`, Helen's deep red) runs through everything as a signature **at the 1–2% level, like a wax seal on a letter**. Each provider is assigned one of the five elements as a personal accent (`--provider-metal` … `--provider-fire`, the text-safe values); fire stays reserved for Helen. A provider directory is the one layout where more than two element colors may appear and gold need not lead. Ratio is **60 cream / 30 deep neutrals / \~8 gold / 1–2 fire**. Two rules that are never broken: **gold never sits on pure white** (it loses its warmth), and **no more than two element colors in one layout**. Cream — never white — is the hero surface; pure white (`--surface-functional`) is reserved for in-product cards and forms so they read as functional.
 
-**Type.** Two families only. **Fraunces** (variable serif, soft ball terminals) does the feeling: headlines, wordmark, pull-quotes, italic-forward, weight \~350 on web / \~450 on social, `SOFT 100` for warm headlines, `SOFT 50` restrained, `SOFT 60` for social and slides. A key phrase inside a headline is set in *italic gold*. **Manrope** (300–700) does the work: body, nav, forms, captions, and the tracked all-caps eyebrow at 11px / 0.28em. No Inter anywhere — that's a separate email/PDF sub-brand. Web scale: display 72 · title 32 · heading 24 · body 17 · eyebrow 11.
+**Type.** Two families only. **Fraunces** (variable serif, soft ball terminals) does the feeling: headlines, wordmark, pull-quotes, italic-forward, weight \~400 on web (h1) / \~450 on social, `SOFT 100` for warm headlines, `SOFT 50` restrained, `SOFT 60` for social and slides. A key phrase inside a headline is set in *italic gold*. **Manrope** (300–700) does the work: body, nav, forms, captions, and the tracked all-caps eyebrow at 11px / 0.24em. No Inter anywhere — that's a separate email/PDF sub-brand. Web scale: display clamp(44→78) · title-xl clamp(30→46) · title 32 · heading 24 · body 17 · eyebrow 11.
 
-**Spacing & layout.** 1180px content measure, 40px page gutter, **110px between sections**, 24px grid gap, 66ch prose measure, 22ch headline measure. Rhythm inside a section is fixed: eyebrow → 22px → title → 16px → lede → 48px → content grid. Nothing is fixed-position except the sticky translucent site header (cream at 92% with a 10px blur).
+**Spacing & layout.** 1180px content measure (860px for card grids and link rows), 40px page gutter, **110px between sections**, 24px grid gap, 66ch prose measure, 22ch headline measure. Rhythm inside a section is fixed: eyebrow → 22px → title → 16px → lede → 48px → content grid. Nothing is fixed-position except the sticky translucent site header (cream at 92% with a 10px blur).
 
 **Backgrounds.** Flat fields, never busy: cream for the default page, charcoal or wood-deep for feature sections, and the **signature gradient** `linear-gradient(158deg, #252220, #3A352F 50%, #8C7344)` for the closing slide and the portal membership card. Dark sections get two very soft radial glows (gold at 18%/20%, wood at 84%/82%) and often a single 520px **breathing ring** hairline circle drifting behind the content. No patterns, no textures, no hand-drawn illustration, no aggressive gradients.
 
@@ -147,7 +147,7 @@ Emoji are never used. If a future surface truly needs UI icons (a portal needs a
 | `components/core/` | `Button`, `Tag`, `KickerPill`, `Card`, `AsideCard`, `QuotePull`, `PhotoFrame` (+ `core.card.html`, `photoframe.card.html`) |
 | `components/practice/` | `MemberBadge`, `ProviderCard` (+ `practice.card.html`) |
 | `guidelines/` | 20 specimen cards — colors, type, spacing, radius, shadow, gradients, motion, logo, voice, imagery |
-| `ui_kits/website/` | Marketing site: home · how I work · fees · consult form |
+| `ui_kits/website/` | Marketing site: home · consult form · stubs for membership, packages, clinical-training, hiring, blog, contact, schedule-medicaid |
 | `ui_kits/portal/` | Member portal: login → dashboard |
 | `slides/` | Five 1920×1080 slide masters |
 | `assets/` | Logos and photography |
@@ -161,8 +161,6 @@ Emoji are never used. If a future surface truly needs UI icons (a portal needs a
 - **No product source code exists upstream.** The repos document the brand and its collateral, not the website or portal implementation. The UI kits use the brand's real values and documented patterns, but their page composition and information architecture are inferred. Each kit's README says so explicitly.
 - **The 12 social/print templates** (`01 Consult CTA` … `12 Letterhead`) live upstream as `.dc.html` sources. They are documented here but not re-authored — say the word and they can be brought in as templates.
 - **No icon set** exists; see ICONOGRAPHY above.
-
----
 
 ## Publishing the static page
 

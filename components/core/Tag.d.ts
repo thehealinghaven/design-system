@@ -5,7 +5,7 @@
 export interface TagProps {
   children?: React.ReactNode;
   /** Element wash. `solid` is the charcoal chip used for the free-consult offer. */
-  tone?: 'gold' | 'wood' | 'water' | 'earth' | 'fire' | 'solid';
+  tone?: 'gold' | 'wood' | 'water' | 'earth' | 'fire' | 'rose' | 'solid';
   style?: React.CSSProperties;
 }
 export function Tag(props: TagProps): JSX.Element;

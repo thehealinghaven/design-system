@@ -1,18 +1,18 @@
 const { Mark, Wordmark, Eyebrow, Button, Tag } = window.TheHealingHavenDesignSystem_2c8068;
 
-const NAV = [['home','Home'],['approach','How I Work'],['fees','Fees & Fit'],['consult','Begin a Consult']];
+const NAV = [['membership','Membership'],['packages','Packages'],['clinical-training','Clinical Training'],['hiring','Hiring'],['blog','Blog'],['contact','Contact']];
 
 function SiteNav({ route, go }) {
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 20, background: 'rgba(245,238,224,0.92)', backdropFilter: 'blur(10px)', borderBottom: '1px solid var(--border-hairline)' }}>
-      <div style={{ maxWidth: 'var(--measure)', margin: '0 auto', padding: '18px var(--gutter-page)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '32px' }}>
+      <div style={{ maxWidth: 'var(--measure)', margin: '0 auto', padding: '18px var(--gutter-page)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '14px 28px' }}>
         <a href="#home" onClick={(e) => { e.preventDefault(); go('home'); }} style={{ display: 'block' }}><Wordmark size={19} markSize={38} line="Helen DeLovely, LCSW · SLC" /></a>
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
-          {NAV.slice(0, 3).map(([id, label]) => (
+        <nav style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px 20px' }}>
+          {NAV.map(([id, label]) => (
             <a key={id} href={'#' + id} onClick={(e) => { e.preventDefault(); go(id); }}
-              style={{ fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600, letterSpacing: 'var(--tracking-button)', textTransform: 'uppercase', color: route === id ? 'var(--gold-deep)' : 'var(--charcoal)', borderBottom: route === id ? '1px solid var(--gold)' : '1px solid transparent', paddingBottom: '4px' }}>{label}</a>
+              style={{ fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600, letterSpacing: 'var(--tracking-button)', textTransform: 'uppercase', color: route === id ? 'var(--gold-deep)' : 'var(--charcoal)', borderBottom: route === id ? '1px solid var(--gold)' : '1px solid transparent', paddingBottom: '4px', whiteSpace: 'nowrap' }}>{label}</a>
           ))}
-          <div style={{ display: 'flex', gap: '14px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 14px' }}>
             <Button variant="dark" onClick={() => go('portal')}>Member Login</Button>
             <Button variant="primary" onClick={() => go('consult')}>Begin a Consult →</Button>
           </div>
@@ -63,7 +63,7 @@ function Section({ eyebrow, title, italicTail, lede, children, tone = 'light', s
     <section style={{ background: dark ? 'var(--surface-feature)' : 'transparent', padding: dark ? '96px var(--gutter-page)' : 'var(--section-y) var(--gutter-page) 0', ...style }}>
       <div style={{ maxWidth: 'var(--measure)', margin: '0 auto' }}>
         {eyebrow && <Eyebrow onDark={dark}>{eyebrow}</Eyebrow>}
-        {title && <h2 style={{ margin: '22px 0 16px', maxWidth: 'var(--measure-headline)', fontFamily: 'var(--font-display)', fontSize: 'var(--text-title-xl)', fontWeight: 350, lineHeight: 'var(--leading-title)', letterSpacing: 'var(--tracking-title)', color: dark ? 'var(--cream)' : 'var(--charcoal)', fontVariationSettings: "'SOFT' 50" }}>
+        {title && <h2 style={{ margin: '22px 0 16px', maxWidth: 'var(--measure-headline)', fontFamily: 'var(--font-display)', fontSize: 'var(--text-title-xl)', fontWeight: 400, lineHeight: 'var(--leading-title)', letterSpacing: 'var(--tracking-title)', color: dark ? 'var(--cream)' : 'var(--charcoal)', fontVariationSettings: "'SOFT' 50" }}>
           {title}{italicTail && <em style={{ fontStyle: 'italic', fontWeight: 400, color: dark ? 'var(--gold-light)' : 'var(--gold-deep)', fontVariationSettings: "'SOFT' 100" }}>{italicTail}</em>}
         </h2>}
         {lede && <p style={{ margin: '0 0 var(--space-10)', maxWidth: 'var(--measure-prose)', fontSize: 'var(--text-body-lg)', lineHeight: 'var(--leading-body)', color: dark ? 'var(--text-on-dark-muted)' : 'var(--charcoal-soft)' }}>{lede}</p>}

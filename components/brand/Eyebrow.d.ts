@@ -1,6 +1,6 @@
 /**
  * The tracked all-caps label that opens every section, with its optional 32px
- * hairline rule. 11px Manrope, 0.28em tracking, gold.
+ * hairline rule. 11px Manrope, 0.24em tracking, gold.
  */
 export interface EyebrowProps {
   children?: React.ReactNode;

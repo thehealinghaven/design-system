@@ -6,6 +6,7 @@ const tones = {
   water: { background: 'var(--wash-water)', color: 'var(--on-wash-water)' },
   earth: { background: 'var(--wash-earth)', color: 'var(--on-wash-earth)' },
   fire:  { background: 'var(--wash-fire)',  color: 'var(--fire)' },
+  rose:  { background: 'var(--wash-rose)',  color: 'var(--on-wash-rose)' },
   solid: { background: 'var(--charcoal)',   color: 'var(--cream-light)' },
 };
 

@@ -1,6 +1,6 @@
 const { Mark, Wordmark, Eyebrow, Button, Tag, Card, AsideCard } = window.TheHealingHavenDesignSystem_2c8068;
 
-const NAVI = ['Sessions', 'Superbills', 'Notes to Helen', 'Practices', 'Account'];
+const NAVI = ['Sessions', 'Documents', 'Notes to Helen', 'Practices', 'Account'];
 
 const SESSIONS = [
   ['Thu 13 Aug', '10:00 am', 'In person · Suite 1521', 'Upcoming'],
@@ -8,7 +8,7 @@ const SESSIONS = [
   ['Thu 30 Jul', '10:00 am', 'In person · Suite 1521', 'Attended'],
 ];
 
-const BILLS = [['July 2026', '$492', 'Ready'], ['June 2026', '$492', 'Sent'], ['May 2026', '$369', 'Sent']];
+const BILLS = [['July 2026', 'Ready'], ['June 2026', 'Sent'], ['May 2026', 'Sent']];
 
 function Dashboard({ onOut }) {
   const [tab, setTab] = React.useState('Sessions');
@@ -27,7 +27,7 @@ function Dashboard({ onOut }) {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '30px', flexWrap: 'wrap' }}>
           <div>
             <Eyebrow>{tab}</Eyebrow>
-            <h1 style={{ margin: '18px 0 0', fontFamily: 'var(--font-display)', fontSize: '40px', fontWeight: 350, lineHeight: 1.05, color: 'var(--charcoal)', fontVariationSettings: "'SOFT' 50" }}>Good morning, <em style={{ fontStyle: 'italic', fontWeight: 400, color: 'var(--gold-deep)', fontVariationSettings: "'SOFT' 100" }}>Sam</em></h1>
+            <h1 style={{ margin: '18px 0 0', fontFamily: 'var(--font-display)', fontSize: 'var(--text-title-xl)', fontWeight: 400, lineHeight: 'var(--leading-title)', color: 'var(--charcoal)', fontVariationSettings: "'SOFT' 50" }}>Good morning, <em style={{ fontStyle: 'italic', fontWeight: 400, color: 'var(--gold-deep)', fontVariationSettings: "'SOFT' 100" }}>Sam</em></h1>
           </div>
           <Button variant="primary">Request a change →</Button>
         </div>
@@ -45,11 +45,10 @@ function Dashboard({ onOut }) {
               ))}
             </div>
             <div style={{ background: 'var(--surface-functional)', border: '1px solid var(--border-hairline)', borderRadius: 'var(--radius)', overflow: 'hidden' }}>
-              <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-hairline)', fontFamily: 'var(--font-body)', fontSize: 'var(--text-micro)', fontWeight: 600, letterSpacing: 'var(--tracking-label)', textTransform: 'uppercase', color: 'var(--gold-deep)' }}>Superbills</div>
-              {BILLS.map(([m, amt, state]) => (
+              <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-hairline)', fontFamily: 'var(--font-body)', fontSize: 'var(--text-micro)', fontWeight: 600, letterSpacing: 'var(--tracking-label)', textTransform: 'uppercase', color: 'var(--gold-deep)' }}>Documents</div>
+              {BILLS.map(([m, state]) => (
                 <div key={m} style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '16px 24px', borderBottom: '1px solid rgba(236,226,206,0.7)' }}>
                   <span style={{ flex: 1, fontSize: 'var(--text-body-md)', color: 'var(--charcoal)' }}>{m}</span>
-                  <span style={{ fontFamily: 'var(--font-display)', fontSize: '20px', color: 'var(--charcoal)' }}>{amt}</span>
                   <Tag tone={state === 'Ready' ? 'gold' : 'wood'}>{state}</Tag>
                   <Button variant="underline">Download</Button>
                 </div>
@@ -57,7 +56,7 @@ function Dashboard({ onOut }) {
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--grid-gap-sm)' }}>
-            <MembershipCard name="Sam Ortega" member="Member since 2024" rate="$123" />
+            <MembershipCard name="Sam Ortega" member="Member since 2024" />
             <AsideCard label="Between sessions" title="Two-minute grounding" accent="wood">
               Grow · hold · shrink · hold. Four rounds, eyes open or closed. It doesn't have to work to be worth doing.
             </AsideCard>

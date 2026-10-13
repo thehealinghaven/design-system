@@ -1,14 +1,10 @@
 # UI kit — helendelovely.com (marketing site)
 
-Four click-through screens: **Home**, **How I Work**, **Fees & Fit**, **Begin a Consult** (with a working form → confirmation state). Nav and footer are shared in `Chrome.jsx`; `Section` there is the standard section shell (eyebrow → Fraunces title with an italic gold tail → 66ch lede → content grid).
+Screens: **Home** (refreshed to match the live site), **Begin a Consult** (working form), and placeholder stubs for the other live pages: membership, packages, clinical-training, hiring, blog, contact, schedule-medicaid. Nav and footer are in `Chrome.jsx`; `Section` is the standard section shell.
 
-Screens compose the published primitives — `Button`, `Tag`, `Card`, `AsideCard`, `QuotePull`, `PhotoFrame`, `Mark`, `Wordmark`, `Eyebrow` — and nothing is re-implemented locally.
+Home positioning: "Neurodivergent-Affirming Therapy" / "From mental health into health & wellness"; five verticals (Mental Health, Aesthetics, Wellness, Coaching, The Somatic Room); headlines "Come as you are — and stay a while.", "Slow on purpose. Built around you.", "No masking required", "A clinician who shows up as a person.", "The people you'll meet."
 
-## Provenance & honesty note
+Removed: "How I Work" and "Fees & Fit" — they no longer exist on the live site.
 
-The source repos (`thehealinghaven/design-system`, `thehealinghaven/brand-kit`) contain the **brand and component language**, plus social/print/deck masters — they do **not** contain the website's own page code. So:
-
-- Every visual value here (colors, type sizes, radii, shadows, motion, button and card anatomy, copy lines, fees, address, phone) is lifted from those sources.
-- The **page composition** — which sections exist and in what order — is inferred from the documented patterns ("Begin a Consult →", "Member Login", the consult CTA band on the signature gradient, the petal photo frame, the tag cluster).
-
-If the real site's markup is available, point us at it and this kit can be corrected to match section for section.
+## Provenance
+Values come from the design-system and brand-kit repos plus a comparison against the live home page. Page composition of everything except Home is not yet modeled; vertical descriptions and provider names on Home are placeholders.

@@ -4,7 +4,7 @@ export function QuotePull({ children, emphasis, caption, tone = 'dark', size = 2
   const dark = tone === 'dark';
   return (
     <div style={{ background: dark ? 'var(--charcoal)' : 'var(--cream-light)', border: dark ? 'none' : '1px solid var(--border-hairline)', borderRadius: 'var(--radius)', padding: '40px 34px', display: 'flex', flexDirection: 'column', justifyContent: 'center', ...style }}>
-      <blockquote style={{ margin: 0, fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 350, fontSize: size, lineHeight: 1.15, color: dark ? 'var(--cream)' : 'var(--charcoal)', fontVariationSettings: "'SOFT' 100" }}>
+      <blockquote style={{ margin: 0, fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 400, fontSize: size, lineHeight: 1.15, color: dark ? 'var(--cream)' : 'var(--charcoal)', fontVariationSettings: "'SOFT' 100" }}>
         {children}
         {emphasis && <em style={{ fontStyle: 'normal', color: dark ? 'var(--fire-soft)' : 'var(--fire)' }}>{emphasis}</em>}
       </blockquote>

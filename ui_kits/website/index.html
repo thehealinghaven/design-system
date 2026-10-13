@@ -1,4 +1,4 @@
-<!-- @dsCard group="Website" viewport="1280x860" name="helendelovely.com" subtitle="Marketing site — home, how I work, fees, consult form. Click the nav." -->
+<!-- @dsCard group="Website" viewport="1280x860" name="helendelovely.com" subtitle="Marketing site — home (refreshed), consult form, stubs for the other live pages." -->
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>The Healing Haven — site kit</title>
 <link rel="stylesheet" href="../../styles.css">
 <style>body{background:var(--cream)}#root{min-height:100vh}</style>
@@ -9,11 +9,19 @@
 </head><body><div id="root"></div>
 <script type="text/babel" src="Chrome.jsx"></script>
 <script type="text/babel" src="Home.jsx"></script>
-<script type="text/babel" src="Approach.jsx"></script>
-<script type="text/babel" src="Fees.jsx"></script>
+<script type="text/babel" src="Pages.jsx"></script>
 <script type="text/babel" src="Consult.jsx"></script>
 <script type="text/babel">
-const { Home, Approach, Fees, Consult, SiteNav, SiteFooter } = window;
+const { Home, Stub, Consult, SiteNav, SiteFooter } = window;
+const STUBS = {
+  'membership': { eyebrow: 'Membership', title: 'Membership', tail: ' — page not yet modeled.' },
+  'packages': { eyebrow: 'Packages', title: 'Packages', tail: ' — page not yet modeled.' },
+  'clinical-training': { eyebrow: 'Clinical training', title: 'Clinical training', tail: ' — page not yet modeled.' },
+  'hiring': { eyebrow: 'Hiring', title: 'Hiring', tail: ' — page not yet modeled.' },
+  'blog': { eyebrow: 'Blog', title: 'Blog', tail: ' — page not yet modeled.' },
+  'contact': { eyebrow: 'Contact', title: 'Contact', tail: ' — page not yet modeled.' },
+  'schedule-medicaid': { eyebrow: 'Schedule Medicaid', title: 'Schedule Medicaid', tail: ' — page not yet modeled.' },
+};
 function App() {
   const [route, setRoute] = React.useState('home');
   const go = (r) => { setRoute(r); window.scrollTo({ top: 0, behavior: 'smooth' }); };
@@ -21,8 +29,7 @@ function App() {
     <div>
       <SiteNav route={route} go={go} />
       {route === 'home' && <Home go={go} />}
-      {route === 'approach' && <Approach go={go} />}
-      {route === 'fees' && <Fees go={go} />}
+      {STUBS[route] && <Stub {...STUBS[route]} go={go} />}
       {route === 'consult' && <Consult />}
       {route === 'portal' && <div style={{maxWidth:'var(--measure)',margin:'0 auto',padding:'var(--section-y) var(--gutter-page)'}}>
         <p style={{fontFamily:'var(--font-display)',fontStyle:'italic',fontSize:'28px',color:'var(--charcoal)',fontVariationSettings:"'SOFT' 100"}}>The member portal lives in <a href="../portal/index.html">ui_kits/portal</a>.</p></div>}

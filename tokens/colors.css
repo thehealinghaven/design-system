@@ -11,6 +11,7 @@
 --terracotta:#A75F42;      /* Community pillar accent */
 --fire:#A53F3F;            /* Fire · signature, 1–2% only */
 --fire-soft:#C26565;       /* fire on dark grounds */
+--rose:var(--fire-soft);   /* site alias for fire-soft */
 
 /* ---- Warm neutrals (base) ---- */
 --cream-light:#FAF6EE;
@@ -26,11 +27,13 @@
 /* ---- Tinted accent washes (tags, callouts) ---- */
 --wash-gold:rgba(184,153,104,0.14);
 --wash-wood:rgba(122,139,111,0.16);
---wash-water:rgba(123,167,166,0.16);
+--wash-water:rgba(123,167,166,0.18);
 --wash-earth:rgba(201,123,92,0.16);
 --wash-fire:rgba(165,63,63,0.12);
---on-wash-water:#3E6E6D;
---on-wash-earth:#9E4F32;
+--wash-rose:rgba(194,101,101,0.14);
+--on-wash-water:#3F6867;
+--on-wash-earth:#9E5B41;
+--on-wash-rose:#9E4848;
 
 /* ---- Semantic aliases ---- */
 --text-strong:var(--charcoal);
@@ -44,13 +47,14 @@
 
 --surface-page:var(--cream);
 --surface-card:var(--cream-light);
+--surface-card-warm:#FFFDF9;   /* site card surface (--hh-card), warmer than cream-light */
 --surface-sunken:var(--cream-deep);
 --surface-deep:var(--charcoal);
 --surface-feature:var(--wood-deep);
 --surface-functional:#FFFFFF;  /* in-product cards + forms only — never marketing */
 
 --border-hairline:var(--cream-deep);
---border-gold:rgba(184,153,104,0.28);
+--border-gold:rgba(184,153,104,0.22);
 --border-on-dark:rgba(245,238,224,0.12);
 
 --accent-primary:var(--gold);

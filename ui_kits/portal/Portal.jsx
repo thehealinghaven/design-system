@@ -1,6 +1,6 @@
 const { Mark, Wordmark, Eyebrow, Button, Tag, Card, AsideCard } = window.TheHealingHavenDesignSystem_2c8068;
 
-function MembershipCard({ name = 'Helen deLovely', member = 'Member since 2024', rate = '$123' }) {
+function MembershipCard({ name = 'Helen deLovely', member = 'Member since 2024' }) {
   return (
     <div style={{ background: 'var(--gradient-signature)', borderRadius: 'var(--radius)', padding: '32px 30px', display: 'flex', flexDirection: 'column', gap: '30px', minHeight: '210px', justifyContent: 'space-between' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -10,7 +10,7 @@ function MembershipCard({ name = 'Helen deLovely', member = 'Member since 2024',
       <div>
         <div style={{ fontFamily: 'var(--font-display)', fontSize: '26px', color: 'var(--cream)', fontVariationSettings: "'SOFT' 100" }}>{name}</div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '10px', fontFamily: 'var(--font-body)', fontSize: 'var(--text-caption)', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(221,201,163,0.85)' }}>
-          <span>{member}</span><span>{rate} / session</span>
+          <span>{member}</span>
         </div>
       </div>
     </div>
@@ -27,8 +27,8 @@ function Login({ onIn }) {
         <Wordmark onDark line="Helen DeLovely, LCSW · SLC" />
         <div className="hh-breathe" aria-hidden="true" style={{ position: 'absolute', bottom: '-160px', left: '-80px', width: '440px', height: '440px', border: '1px solid rgba(221,201,163,0.5)', borderRadius: '50%', animation: 'hh-breathe 18s ease-in-out infinite' }} />
         <div style={{ position: 'relative' }}>
-          <h1 style={{ margin: 0, maxWidth: '18ch', fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 350, fontSize: '52px', lineHeight: 1.05, color: 'var(--cream)', fontVariationSettings: "'SOFT' 100" }}>Welcome back. Nothing here is urgent.</h1>
-          <p style={{ margin: '24px 0 0', maxWidth: '46ch', fontSize: 'var(--text-body-lg)', lineHeight: 'var(--leading-body)', color: 'rgba(245,238,224,0.72)' }}>Your sessions, superbills, and between-session notes — in one quiet place.</p>
+          <h1 style={{ margin: 0, maxWidth: '16ch', fontFamily: 'var(--font-display)', fontStyle: 'italic', fontWeight: 'var(--display-weight)', fontSize: 'var(--text-display)', lineHeight: 'var(--leading-display)', letterSpacing: 'var(--tracking-display)', color: 'var(--cream)', fontVariationSettings: "'SOFT' 100" }}>Welcome back. Nothing here is urgent.</h1>
+          <p style={{ margin: '24px 0 0', maxWidth: '46ch', fontSize: 'var(--text-body-lg)', lineHeight: 'var(--leading-body)', color: 'rgba(245,238,224,0.72)' }}>Your sessions, documents, and between-session notes — in one quiet place.</p>
         </div>
         <div style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-caption)', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(221,201,163,0.6)' }}>The Healing Haven · Member portal</div>
       </div>
